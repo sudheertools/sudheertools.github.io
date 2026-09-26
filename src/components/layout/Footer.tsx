@@ -74,25 +74,37 @@ export default function Footer() {
               No data is sent to any server. Everything is processed
               client-side using JavaScript.
             </p>
-            <div className="mt-4 flex gap-3">
+            <div className="mt-4 flex flex-wrap gap-3">
               <Link
                 href="/"
                 className="text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
               >
                 Home
               </Link>
-              <a
+              <Link
                 href="/about"
                 className="text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
               >
                 About
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/privacy"
                 className="text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
               >
                 Privacy
-              </a>
+              </Link>
+              <Link
+                href="/terms"
+                className="text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+              >
+                Terms
+              </Link>
+              <Link
+                href="/contact"
+                className="text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+              >
+                Contact
+              </Link>
             </div>
             <div className="mt-4 flex gap-4">
               <a

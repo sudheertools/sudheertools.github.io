@@ -170,6 +170,30 @@ export default function RootLayout({
                     text: "Most developer tool sites send your data to their servers for processing. Ours never does. This makes DevTools safe for sensitive data like API keys, JWT tokens, passwords, and proprietary code.",
                   },
                 },
+                {
+                  "@type": "Question",
+                  name: "Are the tools secure for sensitive data?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Yes. All processing happens client-side in your browser. Your API keys, JWT tokens, passwords, and proprietary code never leave your device. No server ever sees your data.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Can I use these tools commercially?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Yes. All tools are free for any use, including commercial. The source code is open source on GitHub.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "How do I report a bug or request a feature?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Open an issue on our GitHub repository at github.com/sudheertools/sudheertools.github.io/issues. We typically respond within 1-2 business days.",
+                  },
+                },
               ],
             }),
           }}
