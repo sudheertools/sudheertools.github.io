@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     siteName: "DevTools",
     images: [
       {
-        url: "/hero-image.svg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "DevTools - 69 Free Private Browser-Based Developer Tools",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     title: "69 Free Developer Tools — Private, Browser-Based | DevTools",
     description:
       "69 free developer tools — JSON, Base64, UUID, regex, and more. 100% client-side, zero data uploads. No signup required.",
-    images: ["/hero-image.svg"],
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
@@ -89,6 +89,7 @@ export default function RootLayout({
               "@type": "Organization",
               name: "DevTools",
               url: "https://sudheertools.github.io",
+              logo: "https://sudheertools.github.io/og-image.png",
               description:
                 "69 free developer tools — JSON, Base64, UUID, regex, and more. 100% client-side, zero data uploads.",
               sameAs: [
@@ -114,110 +115,6 @@ export default function RootLayout({
               url: "https://sudheertools.github.io",
               description:
                 "69 free developer tools that run entirely in your browser. Private, fast, and free.",
-              potentialAction: {
-                "@type": "SearchAction",
-                target:
-                  "https://sudheertools.github.io/?q={search_term_string}",
-                "query-input": "required name=search_term_string",
-              },
-            }),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              mainEntity: [
-                {
-                  "@type": "Question",
-                  name: "Is this really free?",
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "Yes, completely free. No sign-up, no limits, no premium tier. All 69 tools are available to everyone.",
-                  },
-                },
-                {
-                  "@type": "Question",
-                  name: "Does it collect my data?",
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "No. Every tool runs entirely in your browser. No data is sent to any server. You can verify this by opening your browser's DevTools Network tab — you'll see zero outgoing requests.",
-                  },
-                },
-                {
-                  "@type": "Question",
-                  name: "Can I use it offline?",
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "Yes. Once the page is loaded, all tools work offline. No internet connection is required for processing.",
-                  },
-                },
-                {
-                  "@type": "Question",
-                  name: "Which browsers are supported?",
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "All modern browsers: Chrome, Firefox, Safari, Edge. The tools use standard Web APIs (Web Crypto, FileReader, etc.) that work across all major browsers.",
-                  },
-                },
-                {
-                  "@type": "Question",
-                  name: "How is this different from other tool sites?",
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "Most developer tool sites send your data to their servers for processing. Ours never does. This makes DevTools safe for sensitive data like API keys, JWT tokens, passwords, and proprietary code.",
-                  },
-                },
-                {
-                  "@type": "Question",
-                  name: "Are the tools secure for sensitive data?",
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "Yes. All processing happens client-side in your browser. Your API keys, JWT tokens, passwords, and proprietary code never leave your device. No server ever sees your data.",
-                  },
-                },
-                {
-                  "@type": "Question",
-                  name: "Can I use these tools commercially?",
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "Yes. All tools are free for any use, including commercial. The source code is open source on GitHub.",
-                  },
-                },
-                {
-                  "@type": "Question",
-                  name: "How do I report a bug or request a feature?",
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "Open an issue on our GitHub repository at github.com/sudheertools/sudheertools.github.io/issues. We typically respond within 1-2 business days.",
-                  },
-                },
-              ],
-            }),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "BreadcrumbList",
-              itemListElement: [
-                {
-                  "@type": "ListItem",
-                  position: 1,
-                  name: "Home",
-                  item: "https://sudheertools.github.io",
-                },
-                {
-                  "@type": "ListItem",
-                  position: 2,
-                  name: "Tools",
-                  item: "https://sudheertools.github.io/#tools",
-                },
-              ],
             }),
           }}
         />

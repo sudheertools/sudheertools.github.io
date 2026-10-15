@@ -56,6 +56,7 @@ export default function UUIDGeneratorPage() {
   return (
     <>
       <ToolLayout
+        slug="uuid-generator"
         title="UUID Generator"
         description="Generate random UUID v4 (Universally Unique Identifier) strings for use in databases, APIs, and applications. Includes built-in UUID validation."
         breadcrumbs={[

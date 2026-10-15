@@ -6,7 +6,6 @@ import TextArea from "@/components/ui/TextArea";
 import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
 import RelatedTools from "@/components/tools/RelatedTools";
-import ToolInfo from "@/components/tools/ToolInfo";
 import { decodeJWT, getJWTExpiry } from "@/lib/tools/jwt";
 import { copyToClipboard } from "@/lib/utils";
 
@@ -68,62 +67,11 @@ export default function JWTDecoderPage() {
     }
   }
 
-  const infoSections = [
-    {
-      title: "What is a JWT?",
-      content:
-        "JSON Web Token (JWT) is an open standard (RFC 7519) for securely transmitting information between parties as a JSON object. JWTs are commonly used for authentication and authorization in web applications.",
-    },
-    {
-      title: "JWT Structure",
-      content:
-        "A JWT consists of three parts separated by dots: Header (algorithm and token type), Payload (claims and user data), and Signature (for verification). This tool decodes the header and payload without verifying the signature.",
-    },
-    {
-      title: "Common JWT Claims",
-      content: (
-        <ul className="list-disc space-y-1 pl-5">
-          <li><strong>sub:</strong> Subject (user ID)</li>
-          <li><strong>iss:</strong> Issuer (who created the token)</li>
-          <li><strong>exp:</strong> Expiration time (Unix timestamp)</li>
-          <li><strong>iat:</strong> Issued at (creation time)</li>
-          <li><strong>nbf:</strong> Not before (valid from time)</li>
-          <li><strong>aud:</strong> Audience (intended recipient)</li>
-        </ul>
-      ),
-    },
-    {
-      title: "Frequently Asked Questions",
-      content: (
-        <div className="space-y-3">
-          <div>
-            <p className="font-medium text-gray-900 dark:text-gray-100">
-              Is this tool safe for production tokens?
-            </p>
-            <p>
-              Yes. All decoding happens locally in your browser. No token data
-              is sent to any server. However, this tool only decodes — it does
-              not verify the signature.
-            </p>
-          </div>
-          <div>
-            <p className="font-medium text-gray-900 dark:text-gray-100">
-              What if my JWT is expired?
-            </p>
-            <p>
-              The tool will show you when the token expired. An expired token
-              is still valid for decoding, but it should not be used for
-              authentication.
-            </p>
-          </div>
-        </div>
-      ),
-    },
-  ];
 
   return (
     <>
       <ToolLayout
+        slug="jwt-decoder"
         title="JWT Decoder"
         description="Decode JSON Web Tokens (JWT) instantly. View the header, payload, and signature of any JWT token. Our free online tool shows token expiration status and all claims. All processing happens locally in your browser."
         breadcrumbs={[
@@ -226,8 +174,6 @@ export default function JWTDecoderPage() {
             )}
           </div>
         </div>
-
-        <ToolInfo sections={infoSections} />
         <RelatedTools currentSlug="jwt-decoder" />
       </ToolLayout>
 

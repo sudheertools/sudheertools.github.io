@@ -53,6 +53,7 @@ Lines: ${stats.lines}`;
   return (
     <>
       <ToolLayout
+        slug="character-counter"
         title="Character Counter"
         description="Count characters, words, sentences, paragraphs, and lines in any text. Real-time statistics with character count (with and without spaces) for content analysis."
         breadcrumbs={[

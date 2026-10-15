@@ -35,6 +35,7 @@ export default function URLValidatorPage() {
   return (
     <>
       <ToolLayout
+        slug="url-validator"
         title="URL Validator"
         description="Validate URLs and parse their components including protocol, hostname, port, path, query parameters, and hash fragments."
         breadcrumbs={[

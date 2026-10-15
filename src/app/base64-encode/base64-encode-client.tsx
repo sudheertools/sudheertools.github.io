@@ -5,9 +5,7 @@ import ToolLayout from "@/components/layout/ToolLayout";
 import TextArea from "@/components/ui/TextArea";
 import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
-import RelatedTools from "@/components/tools/RelatedTools";
-import ToolInfo from "@/components/tools/ToolInfo";
-
+import RelatedTools from "@/components/tools/RelatedTools";
 import { encodeBase64 } from "@/lib/tools/base64";
 import { copyToClipboard } from "@/lib/utils";
 import Link from "next/link";
@@ -51,74 +49,11 @@ export default function Base64EncodePage() {
     }
   }
 
-  const infoSections = [
-    {
-      title: "What is Base64?",
-      content:
-        "Base64 is a binary-to-text encoding scheme that represents binary data using a set of 64 ASCII characters. It is commonly used to encode data that needs to be transferred over text-based channels, such as embedding images in HTML or CSS, encoding email attachments, and storing complex data in JSON formats.",
-    },
-    {
-      title: "How to use this tool",
-      content:
-        "Simply paste or type the text you want to encode into the input field above, then click the Encode button. The Base64 encoded output will appear instantly in the output area. You can copy the result to your clipboard with one click.",
-    },
-    {
-      title: "Example",
-      content: (
-        <div className="space-y-2">
-          <p>
-            <strong>Input:</strong> Hello, World!
-          </p>
-          <p>
-            <strong>Output:</strong> SGVsbG8sIFdvcmxkIQ==
-          </p>
-          <p className="text-xs text-gray-400">
-            This tool also supports Unicode characters like emojis and
-            non-Latin scripts.
-          </p>
-        </div>
-      ),
-    },
-    {
-      title: "Frequently Asked Questions",
-      content: (
-        <div className="space-y-3">
-          <div>
-            <p className="font-medium text-gray-900 dark:text-gray-100">
-              Is my data sent to a server?
-            </p>
-            <p>
-              No. All encoding happens locally in your browser using the
-              built-in TextEncoder and btoa APIs. Your data never leaves your
-              device.
-            </p>
-          </div>
-          <div>
-            <p className="font-medium text-gray-900 dark:text-gray-100">
-              Does it support Unicode?
-            </p>
-            <p>
-              Yes. The tool properly handles Unicode characters including
-              emojis, Chinese, Japanese, Arabic, and all other scripts.
-            </p>
-          </div>
-          <div>
-            <p className="font-medium text-gray-900 dark:text-gray-100">
-              What is the maximum input size?
-            </p>
-            <p>
-              There is no hard limit, but very large inputs (several megabytes)
-              may be slow depending on your browser and device.
-            </p>
-          </div>
-        </div>
-      ),
-    },
-  ];
 
   return (
     <>
       <ToolLayout
+        slug="base64-encode"
         title="Base64 Encoder"
         description="Encode any text to Base64 format instantly. Our free online Base64 encoder supports Unicode characters including emojis and special characters. All processing happens locally in your browser - your data never leaves your device."
         breadcrumbs={[
@@ -179,9 +114,7 @@ export default function Base64EncodePage() {
             Try the Base64 Decoder →
           </Link>
         </div>
-
-        <ToolInfo sections={infoSections} />
-        <RelatedTools currentSlug="base64-encode" />
+        <RelatedTools currentSlug="base64-encode" />
       </ToolLayout>
 
       {toast && (

@@ -5,7 +5,6 @@ import ToolLayout from "@/components/layout/ToolLayout";
 import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
 import RelatedTools from "@/components/tools/RelatedTools";
-import ToolInfo from "@/components/tools/ToolInfo";
 import { copyToClipboard } from "@/lib/utils";
 
 type Provider = "aws" | "gcp" | "azure";
@@ -101,14 +100,11 @@ export default function TerraformGeneratorPage() {
     }
   }
 
-  const infoSections = [
-    { title: "What is a Terraform Generator?", content: "Generates Terraform HCL configuration for cloud resources on AWS, GCP, and Azure. Start with a template and customize as needed." },
-    { title: "Supported Resources", content: (<ul className="list-disc space-y-1 pl-5"><li>VM / Compute instances</li><li>Object storage (S3, GCS, Blob)</li><li>Databases (RDS, Cloud SQL, Azure SQL)</li><li>Virtual networks (VPC, VNet)</li></ul>) },
-  ];
 
   return (
     <>
       <ToolLayout
+        slug="terraform-generator"
         title="Terraform Generator"
         description="Generate Terraform HCL configuration for AWS, GCP, and Azure cloud resources."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Tools", href: "/" }, { label: "Terraform Generator" }]}
@@ -163,7 +159,6 @@ export default function TerraformGeneratorPage() {
             )}
           </div>
         </div>
-        <ToolInfo sections={infoSections} />
         <RelatedTools currentSlug="terraform-generator" />
       </ToolLayout>
       {toast && <Toast message={toast.message} type={toast.type} onClose={function () { setToast(null); }} />}

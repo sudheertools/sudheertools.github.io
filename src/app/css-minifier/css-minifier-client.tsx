@@ -6,7 +6,6 @@ import TextArea from "@/components/ui/TextArea";
 import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
 import RelatedTools from "@/components/tools/RelatedTools";
-import ToolInfo from "@/components/tools/ToolInfo";
 import { minifyCSS, beautifyCSS, validateCSS } from "@/lib/tools/css";
 import { copyToClipboard } from "@/lib/utils";
 
@@ -76,27 +75,11 @@ export default function CSSMinifierPage() {
     }
   }
 
-  const infoSections = [
-    {
-      title: "What is CSS Minifier?",
-      content:
-        "CSS Minifier is a free online tool that minifies and beautifies CSS code. It can compress CSS by removing whitespace and comments, or format it for better readability.",
-    },
-    {
-      title: "How to Use?",
-      content:
-        "Paste your CSS code in the input area and click 'Minify' to compress it or 'Beautify' to format it. You can also validate the CSS syntax.",
-    },
-    {
-      title: "Features",
-      content:
-        "• Minify CSS by removing whitespace and comments\n• Beautify CSS with proper indentation\n• Validate CSS syntax\n• Report selectors and properties count",
-    },
-  ];
 
   return (
     <>
       <ToolLayout
+        slug="css-minifier"
         title="CSS Minifier"
         description="Minify CSS code to reduce file size or beautify it for better readability. Includes syntax validation and formatting options."
         breadcrumbs={[
@@ -161,8 +144,6 @@ export default function CSSMinifierPage() {
             </div>
           )}
         </div>
-
-        <ToolInfo sections={infoSections} />
         <RelatedTools currentSlug="css-minifier" />
       </ToolLayout>
 

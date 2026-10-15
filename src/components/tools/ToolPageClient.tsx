@@ -47,6 +47,7 @@ export default function ToolPageClient({
   return (
     <>
       <ToolLayout
+        slug={toolSlug}
         title={title}
         description={description}
         breadcrumbs={breadcrumbs || defaultBreadcrumbs}

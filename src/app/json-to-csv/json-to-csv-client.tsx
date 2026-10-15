@@ -6,7 +6,6 @@ import TextArea from "@/components/ui/TextArea";
 import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
 import RelatedTools from "@/components/tools/RelatedTools";
-import ToolInfo from "@/components/tools/ToolInfo";
 import { jsonToCSV } from "@/lib/tools/csv";
 import { copyToClipboard } from "@/lib/utils";
 
@@ -64,57 +63,11 @@ export default function JSONToCSVPage() {
     URL.revokeObjectURL(url);
   }
 
-  const infoSections = [
-    {
-      title: "What is JSON to CSV?",
-      content:
-        "JSON to CSV conversion transforms JSON (JavaScript Object Notation) data into CSV (Comma-Separated Values) format. CSV is widely supported by spreadsheet applications like Excel, Google Sheets, and databases.",
-    },
-    {
-      title: "How to use this tool",
-      content:
-        "Paste your JSON array into the input field. The JSON should be an array of objects. Choose your delimiter (comma, semicolon, or tab) and click Convert. The CSV output can be copied or downloaded.",
-    },
-    {
-      title: "Supported Input Formats",
-      content: (
-        <ul className="list-disc space-y-1 pl-5">
-          <li>Array of objects: [{`{"name": "John"}, {"name": "Jane"}`}]</li>
-          <li>Single object: {`{"name": "John", "age": 30}`}</li>
-          <li>Nested objects (flattened automatically)</li>
-        </ul>
-      ),
-    },
-    {
-      title: "Frequently Asked Questions",
-      content: (
-        <div className="space-y-3">
-          <div>
-            <p className="font-medium text-gray-900 dark:text-gray-100">
-              What delimiter should I use?
-            </p>
-            <p>
-              Comma (,) is the standard CSV delimiter. Use semicolon (;) if your
-              data contains commas. Tab is useful for TSV files.
-            </p>
-          </div>
-          <div>
-            <p className="font-medium text-gray-900 dark:text-gray-100">
-              Does it handle nested JSON?
-            </p>
-            <p>
-              Yes. Nested objects are automatically flattened with dot notation
-              (e.g., address.city).
-            </p>
-          </div>
-        </div>
-      ),
-    },
-  ];
 
   return (
     <>
       <ToolLayout
+        slug="json-to-csv"
         title="JSON to CSV Converter"
         description="Convert JSON data to CSV format instantly. Supports arrays of objects with custom delimiters. Download as CSV file. All processing happens locally in your browser."
         breadcrumbs={[
@@ -180,8 +133,6 @@ export default function JSONToCSVPage() {
             </div>
           </div>
         </div>
-
-        <ToolInfo sections={infoSections} />
         <RelatedTools currentSlug="json-to-csv" />
       </ToolLayout>
 

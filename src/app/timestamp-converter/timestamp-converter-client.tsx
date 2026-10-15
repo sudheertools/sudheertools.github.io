@@ -84,6 +84,7 @@ export default function TimestampConverterPage() {
   return (
     <>
       <ToolLayout
+        slug="timestamp-converter"
         title="Timestamp Converter"
         description="Convert Unix timestamps (seconds and milliseconds) to human-readable dates and vice versa. Supports current timestamp display and multiple date formats."
         breadcrumbs={[

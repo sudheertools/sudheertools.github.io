@@ -72,6 +72,7 @@ export default function CronGeneratorPage() {
   return (
     <>
       <ToolLayout
+        slug="cron-generator"
         title="Cron Expression Generator"
         description="Generate and describe cron expressions for scheduling tasks. Includes presets, human-readable descriptions, and calculates the next 5 scheduled run times."
         breadcrumbs={[

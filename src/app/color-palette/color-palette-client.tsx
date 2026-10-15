@@ -57,6 +57,7 @@ export default function ColorPalettePage() {
   return (
     <>
       <ToolLayout
+        slug="color-palette"
         title="Color Palette Generator"
         description="Generate beautiful color palettes from a base color. Choose from complementary, analogous, triadic, split-complementary, and tetradic schemes."
         breadcrumbs={[

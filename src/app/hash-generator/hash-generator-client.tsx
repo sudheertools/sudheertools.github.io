@@ -61,6 +61,7 @@ export default function HashGeneratorPage() {
   return (
     <>
       <ToolLayout
+        slug="hash-generator"
         title="Hash Generator"
         description="Generate cryptographic hash values (SHA-1, SHA-256, SHA-512) from any text input. Useful for data integrity verification, password hashing, and digital signatures."
         breadcrumbs={[

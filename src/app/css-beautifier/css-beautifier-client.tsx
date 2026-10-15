@@ -52,6 +52,7 @@ export default function CSSBeautifierPage() {
   return (
     <>
       <ToolLayout
+        slug="css-beautifier"
         title="CSS Beautifier"
         description="Format and beautify CSS code with proper indentation and line breaks for better readability."
         breadcrumbs={[

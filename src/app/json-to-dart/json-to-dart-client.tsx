@@ -6,7 +6,6 @@ import TextArea from "@/components/ui/TextArea";
 import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
 import RelatedTools from "@/components/tools/RelatedTools";
-import ToolInfo from "@/components/tools/ToolInfo";
 import { copyToClipboard } from "@/lib/utils";
 
 function capitalize(s: string) {
@@ -114,14 +113,11 @@ export default function JSONToDartPage() {
     catch { setToast({ message: "Failed to copy", type: "error" }); }
   }
 
-  const infoSections = [
-    { title: "What is JSON to Dart?", content: "Converts JSON data into Dart classes with fromJson factory constructors and toJson methods for serialization." },
-    { title: "Features", content: (<ul className="list-disc space-y-1 pl-5"><li>fromJson/toJson serialization</li><li>Proper Dart type mapping</li><li>Nested class generation</li><li>List support for arrays</li></ul>) },
-  ];
 
   return (
     <>
       <ToolLayout
+        slug="json-to-dart"
         title="JSON to Dart"
         description="Convert JSON data to Dart classes with fromJson and toJson methods."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Tools", href: "/" }, { label: "JSON to Dart" }]}
@@ -146,7 +142,6 @@ export default function JSONToDartPage() {
             )}
           </div>
         </div>
-        <ToolInfo sections={infoSections} />
         <RelatedTools currentSlug="json-to-dart" />
       </ToolLayout>
       {toast && <Toast message={toast.message} type={toast.type} onClose={() => setToast(null)} />}

@@ -73,6 +73,7 @@ export default function ColorConverterPage() {
   return (
     <>
       <ToolLayout
+        slug="color-converter"
         title="Color Converter"
         description="Convert colors between HEX, RGB, and HSL formats with real-time preview. Supports interactive color picking and instant format conversion for web development."
         breadcrumbs={[

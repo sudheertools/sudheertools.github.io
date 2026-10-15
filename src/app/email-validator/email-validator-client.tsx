@@ -35,6 +35,7 @@ export default function EmailValidatorPage() {
   return (
     <>
       <ToolLayout
+        slug="email-validator"
         title="Email Validator"
         description="Validate email addresses instantly. Check email format, domain, and syntax with detailed error messages."
         breadcrumbs={[

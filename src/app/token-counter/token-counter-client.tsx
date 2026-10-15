@@ -6,7 +6,6 @@ import TextArea from "@/components/ui/TextArea";
 import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
 import RelatedTools from "@/components/tools/RelatedTools";
-import ToolInfo from "@/components/tools/ToolInfo";
 import { copyToClipboard } from "@/lib/utils";
 
 type Model = "gpt-4" | "gpt-4o" | "gpt-3.5-turbo" | "claude-3" | "llama-3" | "custom";
@@ -93,23 +92,11 @@ export default function TokenCounterPage() {
     catch { setToast({ message: "Failed to copy", type: "error" }); }
   }
 
-  const infoSections = [
-    { title: "What is Token Counting?", content: "Tokens are the basic units that language models process. A token is roughly 4 characters or 0.75 words in English. This tool estimates token count based on word count." },
-    { title: "Why does it matter?", content: "LLM APIs charge per token. Knowing your token count helps estimate costs and stay within context window limits. Different models have different pricing." },
-    { title: "Model Pricing (per 1K tokens)", content: (
-      <ul className="list-disc space-y-1 pl-5">
-        <li><strong>GPT-4:</strong> $0.03 input / $0.06 output</li>
-        <li><strong>GPT-4o:</strong> $0.005 input / $0.015 output</li>
-        <li><strong>GPT-3.5 Turbo:</strong> $0.0005 input / $0.0015 output</li>
-        <li><strong>Claude 3:</strong> $0.015 input / $0.075 output</li>
-        <li><strong>Llama 3:</strong> $0.0005 input / $0.002 output</li>
-      </ul>
-    )},
-  ];
 
   return (
     <>
       <ToolLayout
+        slug="token-counter"
         title="Token Counter"
         description="Count tokens, characters, words, and estimate API costs for LLM prompts. Works with GPT-4, Claude, and Llama models."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Tools", href: "/" }, { label: "Token Counter" }]}
@@ -173,7 +160,6 @@ export default function TokenCounterPage() {
             )}
           </div>
         </div>
-        <ToolInfo sections={infoSections} />
         <RelatedTools currentSlug="token-counter" />
       </ToolLayout>
       {toast && <Toast message={toast.message} type={toast.type} onClose={function () { setToast(null); }} />}

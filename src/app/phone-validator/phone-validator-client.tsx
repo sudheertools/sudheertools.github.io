@@ -35,6 +35,7 @@ export default function PhoneValidatorPage() {
   return (
     <>
       <ToolLayout
+        slug="phone-validator"
         title="Phone Number Validator"
         description="Validate phone numbers and detect their format. Supports international formats, US/Canada numbers, and various phone number styles."
         breadcrumbs={[

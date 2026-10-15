@@ -71,6 +71,7 @@ export default function CaseConverterPage() {
   return (
     <>
       <ToolLayout
+        slug="case-converter"
         title="Case Converter"
         description="Convert text between multiple case formats including camelCase, snake_case, kebab-case, PascalCase, UPPER CASE, lower case, and more with instant results."
         breadcrumbs={[

@@ -5,7 +5,6 @@ import ToolLayout from "@/components/layout/ToolLayout";
 import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
 import RelatedTools from "@/components/tools/RelatedTools";
-import ToolInfo from "@/components/tools/ToolInfo";
 import { copyToClipboard } from "@/lib/utils";
 
 type Runtime = "node" | "python" | "go" | "rust" | "java" | "nginx" | "custom";
@@ -143,14 +142,11 @@ export default function DockerfileGeneratorPage() {
     catch { setToast({ message: "Failed to copy", type: "error" }); }
   }
 
-  const infoSections = [
-    { title: "What is a Dockerfile Generator?", content: "Generates optimized Dockerfiles for various runtimes. Choose your stack and get a production-ready Dockerfile with best practices." },
-    { title: "Best Practices", content: (<ul className="list-disc space-y-1 pl-5"><li>Multi-stage builds for smaller images</li><li>Non-root user for security</li><li>Layer caching optimization</li><li>Alpine-based images when possible</li></ul>) },
-  ];
 
   return (
     <>
       <ToolLayout
+        slug="dockerfile-generator"
         title="Dockerfile Generator"
         description="Generate optimized Dockerfiles for Node.js, Python, Go, Rust, Java, and Nginx with best practices."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Tools", href: "/" }, { label: "Dockerfile Generator" }]}
@@ -189,7 +185,6 @@ export default function DockerfileGeneratorPage() {
             )}
           </div>
         </div>
-        <ToolInfo sections={infoSections} />
         <RelatedTools currentSlug="dockerfile-generator" />
       </ToolLayout>
       {toast && <Toast message={toast.message} type={toast.type} onClose={() => setToast(null)} />}

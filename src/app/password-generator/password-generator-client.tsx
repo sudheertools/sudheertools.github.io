@@ -44,6 +44,7 @@ export default function PasswordGeneratorPage() {
   return (
     <>
       <ToolLayout
+        slug="password-generator"
         title="Password Generator"
         description="Generate strong, random passwords with customizable options including length, uppercase, lowercase, numbers, and symbols. Includes real-time password strength analysis."
         breadcrumbs={[

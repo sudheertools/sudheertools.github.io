@@ -2,20 +2,20 @@ import type { Metadata } from "next";
 import GradientGeneratorPage from "./gradient-generator-client";
 
 export const metadata: Metadata = {
-  title: "CSS Gradient Generator - Free Online Tool",
-  description: "Create beautiful CSS gradients with live preview. Generate linear and radial gradients with multiple color stops.",
-  keywords: "gradient generator online, free gradient generator, gradient generator tool, gradient generator browser, css tools, generate gradient, random gradient",
+  title: "Gradient Generator - Linear & Radial CSS Gradients",
+  description: "Build linear and radial CSS gradients with adjustable angle, color stops, and live preview. Copy production-ready CSS in one click.",
+  keywords: "gradient generator online, free gradient generator, linear gradient tool, radial gradient css, css tools, generate gradient, gradient with angle",
   openGraph: {
-    title: "CSS Gradient Generator - Free Online Tool",
-    description: "Create beautiful CSS gradients with live preview. Generate linear and radial gradients with multiple color stops.",
+    title: "Gradient Generator - Linear & Radial CSS Gradients",
+    description: "Build linear and radial CSS gradients with adjustable angle, color stops, and live preview. Copy production-ready CSS in one click.",
     url: "https://sudheertools.github.io/gradient-generator",
     siteName: "DevTools",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "CSS Gradient Generator - Free Online Tool",
-    description: "Create beautiful CSS gradients with live preview. Generate linear and radial gradients with multiple color stops.",
+    title: "Gradient Generator - Linear & Radial CSS Gradients",
+    description: "Build linear and radial CSS gradients with adjustable angle, color stops, and live preview. Copy production-ready CSS in one click.",
   },
   alternates: {
     canonical: "https://sudheertools.github.io/gradient-generator",

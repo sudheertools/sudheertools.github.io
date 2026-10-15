@@ -59,6 +59,7 @@ export default function URLParserPage() {
   return (
     <>
       <ToolLayout
+        slug="url-parser"
         title="URL Parser"
         description="Parse and analyze URLs to extract protocol, hostname, port, pathname, search parameters, and hash components. Perfect for debugging and web development."
         breadcrumbs={[

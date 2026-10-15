@@ -6,7 +6,6 @@ import TextArea from "@/components/ui/TextArea";
 import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
 import RelatedTools from "@/components/tools/RelatedTools";
-import ToolInfo from "@/components/tools/ToolInfo";
 import { encodeURL } from "@/lib/tools/url";
 import { copyToClipboard } from "@/lib/utils";
 
@@ -52,6 +51,7 @@ export default function URLEncodePage() {
   return (
     <>
       <ToolLayout
+        slug="url-encode"
         title="URL Encoder"
         description="Encode text for safe use in URLs and query parameters instantly. Our free online URL encoder converts special characters to percent-encoded format. All processing happens locally in your browser."
         breadcrumbs={[
@@ -89,17 +89,6 @@ export default function URLEncodePage() {
             </div>
           </div>
         </div>
-
-        <ToolInfo sections={[
-          {
-            title: "What is URL Encoding?",
-            content: "URL encoding (percent-encoding) converts characters into a format that can be transmitted over the Internet. URLs can only contain ASCII characters, so non-ASCII characters and special characters must be encoded."
-          },
-          {
-            title: "Common Use Cases",
-            content: "Encoding query parameters, form data, and any text that needs to be safely included in a URL."
-          }
-        ]} />
         <RelatedTools currentSlug="url-encode" />
       </ToolLayout>
 

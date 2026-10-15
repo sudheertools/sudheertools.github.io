@@ -5,7 +5,6 @@ import ToolLayout from "@/components/layout/ToolLayout";
 import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
 import RelatedTools from "@/components/tools/RelatedTools";
-import ToolInfo from "@/components/tools/ToolInfo";
 import { imageToBase64, formatFileSize } from "@/lib/tools/base64";
 import { copyToClipboard } from "@/lib/utils";
 
@@ -92,68 +91,11 @@ export default function ImageToBase64Page() {
     URL.revokeObjectURL(url);
   }
 
-  const infoSections = [
-    {
-      title: "What is Image to Base64?",
-      content:
-        "Image to Base64 conversion transforms an image file into a Base64 encoded string. This encoding allows images to be embedded directly in HTML, CSS, JSON, and other text-based formats without needing a separate file reference.",
-    },
-    {
-      title: "How to use this tool",
-      content:
-        "Click the upload area or drag and drop an image file. The tool will instantly convert it to a Base64 string. You can then copy the string or download it as a text file. Supported formats include PNG, JPG, GIF, SVG, and WebP.",
-    },
-    {
-      title: "Common Use Cases",
-      content: (
-        <ul className="list-disc space-y-1 pl-5">
-          <li>Embedding images directly in HTML or CSS</li>
-          <li>Sending images in JSON payloads</li>
-          <li>Storing images in databases as text</li>
-          <li>Creating data URIs for web development</li>
-          <li>Sharing images via text-based channels</li>
-        </ul>
-      ),
-    },
-    {
-      title: "Frequently Asked Questions",
-      content: (
-        <div className="space-y-3">
-          <div>
-            <p className="font-medium text-gray-900 dark:text-gray-100">
-              Is my image uploaded to a server?
-            </p>
-            <p>
-              No. All conversion happens locally in your browser using the
-              FileReader API. Your image never leaves your device.
-            </p>
-          </div>
-          <div>
-            <p className="font-medium text-gray-900 dark:text-gray-100">
-              What image formats are supported?
-            </p>
-            <p>
-              All common image formats: PNG, JPG/JPEG, GIF, SVG, WebP, BMP, and
-              ICO.
-            </p>
-          </div>
-          <div>
-            <p className="font-medium text-gray-900 dark:text-gray-100">
-              Is there a file size limit?
-            </p>
-            <p>
-              The tool supports images up to 10MB. Larger files may be slow to
-              process depending on your device.
-            </p>
-          </div>
-        </div>
-      ),
-    },
-  ];
 
   return (
     <>
       <ToolLayout
+        slug="image-to-base64"
         title="Image to Base64 Converter"
         description="Convert any image to a Base64 encoded string instantly. Our free online tool supports PNG, JPG, GIF, SVG, and more. All processing happens locally in your browser - your images never leave your device."
         breadcrumbs={[
@@ -304,8 +246,6 @@ export default function ImageToBase64Page() {
             )}
           </div>
         </div>
-
-        <ToolInfo sections={infoSections} />
         <RelatedTools currentSlug="image-to-base64" />
       </ToolLayout>
 

@@ -53,6 +53,7 @@ export default function RemoveDuplicatesPage() {
   return (
     <>
       <ToolLayout
+        slug="remove-duplicates"
         title="Remove Duplicate Lines"
         description="Remove duplicate lines from any text while keeping the first occurrence. Case-sensitive or case-insensitive matching options."
         breadcrumbs={[

@@ -53,6 +53,7 @@ export default function LoremIpsumPage() {
   return (
     <>
       <ToolLayout
+        slug="lorem-ipsum"
         title="Lorem Ipsum Generator"
         description="Generate Lorem Ipsum placeholder text in paragraphs, sentences, or words for use in design mockups, layouts, and content prototypes."
         breadcrumbs={[

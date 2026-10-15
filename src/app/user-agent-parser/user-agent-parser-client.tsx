@@ -6,7 +6,6 @@ import TextArea from "@/components/ui/TextArea";
 import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
 import RelatedTools from "@/components/tools/RelatedTools";
-import ToolInfo from "@/components/tools/ToolInfo";
 import { parseUserAgent, type UserAgentInfo } from "@/lib/tools/user-agent";
 import { copyToClipboard } from "@/lib/utils";
 
@@ -67,27 +66,11 @@ export default function UserAgentParserPage() {
     }
   }
 
-  const infoSections = [
-    {
-      title: "What is User Agent Parser?",
-      content:
-        "User Agent Parser is a free online tool that parses User Agent strings to extract browser, operating system, and device information. It helps developers understand client capabilities.",
-    },
-    {
-      title: "How to Use?",
-      content:
-        "Paste a User Agent string in the input area and click 'Parse' to extract the information. You can also click on a sample to auto-fill and parse it.",
-    },
-    {
-      title: "Information Extracted",
-      content:
-        "• Browser name and version\n• Operating system and version\n• Device type (Desktop, Mobile, Tablet)\n• Rendering engine name and version",
-    },
-  ];
 
   return (
     <>
       <ToolLayout
+        slug="user-agent-parser"
         title="User Agent Parser"
         description="Parse User Agent strings to extract detailed information about browsers, operating systems, and devices."
         breadcrumbs={[
@@ -179,8 +162,6 @@ export default function UserAgentParserPage() {
             </div>
           )}
         </div>
-
-        <ToolInfo sections={infoSections} />
         <RelatedTools currentSlug="user-agent-parser" />
       </ToolLayout>
 

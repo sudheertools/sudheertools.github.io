@@ -5,7 +5,6 @@ import ToolLayout from "@/components/layout/ToolLayout";
 import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
 import RelatedTools from "@/components/tools/RelatedTools";
-import ToolInfo from "@/components/tools/ToolInfo";
 import {
   compressImage,
   createDownloadUrl,
@@ -91,27 +90,11 @@ export default function ImageCompressorPage() {
     ? Math.round((1 - result.size / originalFile.size) * 100)
     : 0;
 
-  const infoSections = [
-    {
-      title: "What is Image Compressor?",
-      content:
-        "Image Compressor is a free online tool that reduces image file sizes while maintaining quality. It supports JPG, PNG, and WebP formats and shows before/after size comparison.",
-    },
-    {
-      title: "How to Use?",
-      content:
-        "Click 'Choose File' or drag an image into the upload area. Adjust the quality and max dimensions, then click 'Compress' to reduce the file size.",
-    },
-    {
-      title: "Features",
-      content:
-        "• Compress JPG, PNG, and WebP images\n• Adjustable quality settings\n• Custom max dimensions\n• Before/after size comparison\n• Download compressed image",
-    },
-  ];
 
   return (
     <>
       <ToolLayout
+        slug="image-compressor"
         title="Image Compressor"
         description="Compress JPG, PNG, and WebP images to reduce file size while maintaining quality. Adjustable settings and instant preview."
         breadcrumbs={[
@@ -210,8 +193,6 @@ export default function ImageCompressorPage() {
             </div>
           )}
         </div>
-
-        <ToolInfo sections={infoSections} />
         <RelatedTools currentSlug="image-compressor" />
       </ToolLayout>
 

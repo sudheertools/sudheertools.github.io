@@ -6,7 +6,6 @@ import TextArea from "@/components/ui/TextArea";
 import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
 import RelatedTools from "@/components/tools/RelatedTools";
-import ToolInfo from "@/components/tools/ToolInfo";
 import { copyToClipboard } from "@/lib/utils";
 
 function jsonToTS(obj: Record<string, unknown>, name = "Root", indent = 0): string {
@@ -113,32 +112,11 @@ export default function JSONToTypeScriptPage() {
     }
   }
 
-  const infoSections = [
-    {
-      title: "What is JSON to TypeScript?",
-      content: "This tool converts JSON data into TypeScript interface definitions. Paste any JSON object and get properly typed interfaces with optional markers for nullable fields.",
-    },
-    {
-      title: "How to use",
-      content: "Paste your JSON data in the input field, optionally customize the root interface name, and click Convert. The generated TypeScript interfaces will appear in the output.",
-    },
-    {
-      title: "Features",
-      content: (
-        <ul className="list-disc space-y-1 pl-5">
-          <li>Nested interface generation</li>
-          <li>Array type detection</li>
-          <li>Optional field markers for null/undefined</li>
-          <li>Customizable root interface name</li>
-          <li>Type inference for all JSON primitives</li>
-        </ul>
-      ),
-    },
-  ];
 
   return (
     <>
       <ToolLayout
+        slug="json-to-typescript"
         title="JSON to TypeScript"
         description="Convert JSON data to TypeScript interfaces and types. Paste JSON to generate typed definitions instantly."
         breadcrumbs={[
@@ -183,7 +161,6 @@ export default function JSONToTypeScriptPage() {
             )}
           </div>
         </div>
-        <ToolInfo sections={infoSections} />
         <RelatedTools currentSlug="json-to-typescript" />
       </ToolLayout>
       {toast && <Toast message={toast.message} type={toast.type} onClose={() => setToast(null)} />}

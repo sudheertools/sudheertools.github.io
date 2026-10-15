@@ -6,7 +6,6 @@ import TextArea from "@/components/ui/TextArea";
 import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
 import RelatedTools from "@/components/tools/RelatedTools";
-import ToolInfo from "@/components/tools/ToolInfo";
 import { base64ToImage } from "@/lib/tools/base64";
 import Link from "next/link";
 
@@ -53,70 +52,11 @@ export default function Base64ToImagePage() {
     document.body.removeChild(a);
   }
 
-  const infoSections = [
-    {
-      title: "What is Base64 to Image?",
-      content:
-        "Base64 to Image conversion decodes a Base64 encoded string back into an image file. This is useful when you have received image data encoded as Base64 in APIs, databases, or configuration files and need to view or save the original image.",
-    },
-    {
-      title: "How to use this tool",
-      content:
-        "Paste your Base64 encoded image data into the input field. The tool supports both plain Base64 strings and data URI format (e.g., data:image/png;base64,...). Click Decode to preview the image, then download it if needed.",
-    },
-    {
-      title: "Supported Formats",
-      content: (
-        <ul className="list-disc space-y-1 pl-5">
-          <li>PNG images</li>
-          <li>JPG/JPEG images</li>
-          <li>GIF images</li>
-          <li>WebP images</li>
-          <li>SVG images</li>
-          <li>Data URI format (data:image/...;base64,...)</li>
-        </ul>
-      ),
-    },
-    {
-      title: "Frequently Asked Questions",
-      content: (
-        <div className="space-y-3">
-          <div>
-            <p className="font-medium text-gray-900 dark:text-gray-100">
-              What format should my input be?
-            </p>
-            <p>
-              You can enter either a plain Base64 string or a complete data URI
-              (e.g., data:image/png;base64,iVBORw0KGgo...). The tool
-              automatically detects the format.
-            </p>
-          </div>
-          <div>
-            <p className="font-medium text-gray-900 dark:text-gray-100">
-              Is my data safe?
-            </p>
-            <p>
-              Absolutely. All decoding happens locally in your browser. No data
-              is transmitted to any server.
-            </p>
-          </div>
-          <div>
-            <p className="font-medium text-gray-900 dark:text-gray-100">
-              Why is my image not showing?
-            </p>
-            <p>
-              Make sure your Base64 string is valid and not corrupted. If using
-              a data URI, ensure it starts with data:image/.
-            </p>
-          </div>
-        </div>
-      ),
-    },
-  ];
 
   return (
     <>
       <ToolLayout
+        slug="base64-to-image"
         title="Base64 to Image Decoder"
         description="Decode Base64 encoded strings back to images instantly. Our free online tool supports PNG, JPG, GIF, WebP, and data URI format. All processing happens locally in your browser - your data never leaves your device."
         breadcrumbs={[
@@ -188,8 +128,6 @@ export default function Base64ToImagePage() {
             Try the Image to Base64 Encoder →
           </Link>
         </div>
-
-        <ToolInfo sections={infoSections} />
         <RelatedTools currentSlug="base64-to-image" />
       </ToolLayout>
 

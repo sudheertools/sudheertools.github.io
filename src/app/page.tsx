@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo, useEffect } from "react";
+import Link from "next/link";
 import { tools, categories } from "@/lib/tools/registry";
 import ToolCard from "@/components/tools/ToolCard";
 import ThemeToggle from "@/components/layout/ThemeToggle";
@@ -134,16 +135,16 @@ export default function HomePage() {
           <span>tools</span>
         </div>
         <div className="flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2 text-sm text-gray-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400">
-          <span className="text-lg font-bold text-gray-900 dark:text-white">10,000+</span>
-          <span>developers</span>
+          <span className="text-lg font-bold text-gray-900 dark:text-white">16</span>
+          <span>categories</span>
         </div>
         <div className="flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2 text-sm text-gray-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400">
           <span className="text-lg font-bold text-gray-900 dark:text-white">0</span>
           <span>servers</span>
         </div>
         <div className="flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-2 text-sm text-gray-600 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400">
-          <span className="text-lg font-bold text-gray-900 dark:text-white">0</span>
-          <span>data breaches</span>
+          <span className="text-lg font-bold text-gray-900 dark:text-white">Free</span>
+          <span>forever</span>
         </div>
         <a
           href="https://github.com/sudheertools/sudheertools.github.io"
@@ -635,6 +636,57 @@ export default function HomePage() {
           <h2 className="text-center text-2xl font-bold text-gray-900 dark:text-white">
             Frequently Asked Questions
           </h2>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                mainEntity: [
+                  {
+                    "@type": "Question",
+                    name: "Is this really free?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Yes, completely free. No sign-up, no limits, no premium tier. All 69 tools are available to everyone.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Does it collect my data?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "No. Every tool runs entirely in your browser. No data is sent to any server. You can verify this by opening your browser's DevTools Network tab — you'll see zero outgoing requests.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Can I use it offline?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Yes. Once the page is loaded, all tools work offline. No internet connection is required for processing.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "Which browsers are supported?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "All modern browsers: Chrome, Firefox, Safari, Edge. The tools use standard Web APIs (Web Crypto, FileReader, etc.) that work across all major browsers.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    name: "How is this different from other tool sites?",
+                    acceptedAnswer: {
+                      "@type": "Answer",
+                      text: "Most developer tool sites send your data to their servers for processing. Ours never does. This makes DevTools safe for sensitive data like API keys, JWT tokens, passwords, and proprietary code.",
+                    },
+                  },
+                ],
+              }),
+            }}
+          />
           <div className="mt-8 space-y-4">
             {[
               {
@@ -777,14 +829,25 @@ export default function HomePage() {
             What&apos;s New
           </h2>
           <p className="mt-3 text-center text-gray-600 dark:text-gray-400">
-            Recent updates and improvements to DevTools.
+            Recent updates and improvements to DevTools.{" "}
+            <Link
+              href="/changelog"
+              className="text-blue-600 hover:underline dark:text-blue-400"
+            >
+              View full changelog →
+            </Link>
           </p>
           <div className="mt-8 space-y-4">
             {[
               {
-                date: "Sep 2026",
-                title: "Phase 4 improvements",
-                desc: "Added FAQPage schema for rich snippets, author bio, GitHub badge, usage stats bar, and Most Popular tool badges.",
+                date: "Oct 2026",
+                title: "Content & quality overhaul",
+                desc: "Every one of the 69 tool pages now includes a full guide: what the tool is, why to use it, step-by-step instructions, worked examples, use cases, and FAQs.",
+              },
+              {
+                date: "Oct 2026",
+                title: "Structured data fixes",
+                desc: "Per-tool SoftwareApplication and FAQ schema now emitted correctly; sitewide FAQ schema scoped to the homepage to match visible content.",
               },
               {
                 date: "Sep 2026",
@@ -794,12 +857,7 @@ export default function HomePage() {
               {
                 date: "Sep 2026",
                 title: "Guide pages launched",
-                desc: "5 new guide pages covering JSON formatting, JWT decoding, Base64 encoding, UUID generation, and regex testing.",
-              },
-              {
-                date: "Sep 2026",
-                title: "Privacy-first redesign",
-                desc: "Complete homepage rebuild with privacy narrative, How It Works section, Standards & References, and Quick Comparisons.",
+                desc: "6 in-depth guide pages covering JSON formatting, JWT decoding, Base64 encoding, UUID generation, regex testing, and hash functions.",
               },
             ].map((item, i) => (
               <div
@@ -900,7 +958,7 @@ export default function HomePage() {
       </section>
 
       <div className="mt-16 text-center text-xs text-gray-400 dark:text-gray-500">
-        <p>Last updated: {new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</p>
+        <p>Last updated: October 15, 2026</p>
       </div>
     </div>
   );

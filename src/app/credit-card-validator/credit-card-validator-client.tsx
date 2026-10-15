@@ -35,6 +35,7 @@ export default function CreditCardValidatorPage() {
   return (
     <>
       <ToolLayout
+        slug="credit-card-validator"
         title="Credit Card Validator"
         description="Validate credit card numbers using the Luhn algorithm and detect the card type. Supports Visa, Mastercard, American Express, Discover, and more."
         breadcrumbs={[

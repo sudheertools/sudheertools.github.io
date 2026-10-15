@@ -5,7 +5,6 @@ import ToolLayout from "@/components/layout/ToolLayout";
 import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
 import RelatedTools from "@/components/tools/RelatedTools";
-import ToolInfo from "@/components/tools/ToolInfo";
 import { getContrastRatio, getRating, getContrastColor } from "@/lib/tools/color-contrast";
 import { copyToClipboard } from "@/lib/utils";
 
@@ -38,27 +37,11 @@ export default function ColorContrastPage() {
 
   const rating = ratio ? getRating(ratio) : null;
 
-  const infoSections = [
-    {
-      title: "What is Color Contrast Checker?",
-      content:
-        "Color Contrast Checker is a free online tool that checks the contrast ratio between two colors to ensure they meet WCAG accessibility standards. It helps you create accessible color combinations.",
-    },
-    {
-      title: "How to Use?",
-      content:
-        "Enter foreground and background colors in hex format (e.g., #000000) and click 'Check Contrast' to see the contrast ratio and WCAG compliance level.",
-    },
-    {
-      title: "WCAG Standards",
-      content:
-        "• AAA: Ratio >= 7:1 (highest accessibility)\n• AA: Ratio >= 4.5:1 (standard accessibility)\n• AA Large: Ratio >= 3:1 (for large text)\n• Fail: Ratio < 3:1 (does not meet standards)",
-    },
-  ];
 
   return (
     <>
       <ToolLayout
+        slug="color-contrast"
         title="Color Contrast Checker"
         description="Check the contrast ratio between foreground and background colors to ensure WCAG accessibility compliance. Supports AA and AAA standards."
         breadcrumbs={[
@@ -197,8 +180,6 @@ export default function ColorContrastPage() {
             </div>
           </div>
         </div>
-
-        <ToolInfo sections={infoSections} />
         <RelatedTools currentSlug="color-contrast" />
       </ToolLayout>
 

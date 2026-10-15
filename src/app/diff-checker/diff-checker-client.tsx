@@ -6,7 +6,6 @@ import TextArea from "@/components/ui/TextArea";
 import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
 import RelatedTools from "@/components/tools/RelatedTools";
-import ToolInfo from "@/components/tools/ToolInfo";
 import { computeDiff, getDiffStats } from "@/lib/tools/diff";
 import type { DiffLine } from "@/lib/tools/diff";
 
@@ -39,6 +38,7 @@ export default function DiffCheckerPage() {
   return (
     <>
       <ToolLayout
+        slug="diff-checker"
         title="Diff Checker"
         description="Compare two texts side by side and see the differences highlighted. Perfect for comparing code, documents, or any text content."
         breadcrumbs={[
@@ -118,21 +118,6 @@ export default function DiffCheckerPage() {
             </div>
           )}
         </div>
-
-        <ToolInfo
-          sections={[
-            {
-              title: "What is Diff Checker?",
-              content:
-                "Diff Checker is a free online tool that compares two texts side by side and highlights the differences. It shows additions in green and removals in red, making it easy to see what changed.",
-            },
-            {
-              title: "How to Use?",
-              content:
-                "Paste the original text in the first area and the modified text in the second area. Click 'Compare' to see the differences highlighted.",
-            },
-          ]}
-        />
         <RelatedTools currentSlug="diff-checker" />
       </ToolLayout>
 

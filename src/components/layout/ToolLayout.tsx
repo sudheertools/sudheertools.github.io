@@ -45,10 +45,11 @@ function generateSoftwareApplicationSchema(tool: ReturnType<typeof getToolBySlug
       name: "DevTools",
       url: baseUrl,
     },
-    datePublished: "2024-01-01",
-    dateModified: new Date().toISOString().split("T")[0],
-    featureList: tool.howToUse || [],
-    screenshot: `${baseUrl}/hero-image.svg`,
+    // Static dates keep structured data consistent for crawlers (no fake "freshness").
+  datePublished: "2024-06-01",
+    dateModified: "2026-10-15",
+    featureList: tool.whyUse && tool.whyUse.length > 0 ? tool.whyUse : undefined,
+    screenshot: `${baseUrl}/og-image.png`,
   };
 }
 
@@ -192,9 +193,9 @@ export default function ToolLayout({
         </p>
       </header>
 
-      <AdBanner format="horizontal" />
-
       {children}
+
+      {/* Single in-content ad — content above and below keeps ad-to-content ratio healthy */}
 
       {tool?.whatIs && (
         <section className="mt-12" id="what-is">
@@ -204,6 +205,19 @@ export default function ToolLayout({
           <div className="prose prose-gray mt-4 max-w-none dark:prose-invert">
             <p className="text-gray-600 dark:text-gray-400">{tool.whatIs}</p>
           </div>
+        </section>
+      )}
+
+      {tool?.whyUse && tool.whyUse.length > 0 && (
+        <section className="mt-12" id="why-use">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+            Why Use {tool.name}?
+          </h2>
+          <ul className="mt-4 list-disc list-inside space-y-2 text-gray-600 dark:text-gray-400">
+            {tool.whyUse.map((reason, i) => (
+              <li key={i}>{reason}</li>
+            ))}
+          </ul>
         </section>
       )}
 
@@ -250,6 +264,19 @@ export default function ToolLayout({
               </div>
             ))}
           </div>
+        </section>
+      )}
+
+      {tool?.useCases && tool.useCases.length > 0 && (
+        <section className="mt-12" id="use-cases">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+            Common Use Cases
+          </h2>
+          <ul className="mt-4 list-disc list-inside space-y-2 text-gray-600 dark:text-gray-400">
+            {tool.useCases.map((useCase, i) => (
+              <li key={i}>{useCase}</li>
+            ))}
+          </ul>
         </section>
       )}
 

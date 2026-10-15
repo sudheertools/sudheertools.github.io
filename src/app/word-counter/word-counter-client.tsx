@@ -24,6 +24,7 @@ export default function WordCounterPage() {
   return (
     <>
       <ToolLayout
+        slug="word-counter"
         title="Word Counter"
         description="Count words, characters, sentences, and paragraphs in any text. Get estimated reading time and detailed text statistics."
         breadcrumbs={[

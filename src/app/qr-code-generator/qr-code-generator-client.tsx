@@ -5,7 +5,6 @@ import ToolLayout from "@/components/layout/ToolLayout";
 import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
 import RelatedTools from "@/components/tools/RelatedTools";
-import ToolInfo from "@/components/tools/ToolInfo";
 import { generateQRCode, generateQRCodeCanvas } from "@/lib/tools/qr";
 
 type QRSize = "small" | "medium" | "large";
@@ -109,60 +108,11 @@ export default function QRCodeGeneratorPage() {
     }
   }
 
-  const infoSections = [
-    {
-      title: "What is a QR Code?",
-      content:
-        "QR (Quick Response) code is a two-dimensional barcode that stores information in a matrix of black and white squares. It can encode text, URLs, contact information, and more. QR codes can be scanned by smartphone cameras and QR reader apps.",
-    },
-    {
-      title: "How to use this tool",
-      content:
-        "Enter any text or URL in the input field. Customize the size and colors using the options below. Click Generate to create your QR code. You can download it as PNG or copy it directly to your clipboard.",
-    },
-    {
-      title: "Common Use Cases",
-      content: (
-        <ul className="list-disc space-y-1 pl-5">
-          <li>Sharing website URLs</li>
-          <li>WiFi password sharing</li>
-          <li>Contact information (vCard)</li>
-          <li>Product labels and packaging</li>
-          <li>Event tickets and passes</li>
-          <li>Payment links</li>
-        </ul>
-      ),
-    },
-    {
-      title: "Frequently Asked Questions",
-      content: (
-        <div className="space-y-3">
-          <div>
-            <p className="font-medium text-gray-900 dark:text-gray-100">
-              Is there a limit to how much text I can encode?
-            </p>
-            <p>
-              QR codes can store up to 4,296 alphanumeric characters. However,
-              simpler data results in smaller, easier-to-scan codes.
-            </p>
-          </div>
-          <div>
-            <p className="font-medium text-gray-900 dark:text-gray-100">
-              What colors should I use?
-            </p>
-            <p>
-              Use dark colors on light backgrounds for best scanning results.
-              High contrast between foreground and background is important.
-            </p>
-          </div>
-        </div>
-      ),
-    },
-  ];
 
   return (
     <>
       <ToolLayout
+        slug="qr-code-generator"
         title="QR Code Generator"
         description="Generate QR codes instantly for any text or URL. Customize size, foreground, and background colors. Download as PNG. All processing happens locally in your browser."
         breadcrumbs={[
@@ -273,8 +223,6 @@ export default function QRCodeGeneratorPage() {
             )}
           </div>
         </div>
-
-        <ToolInfo sections={infoSections} />
         <RelatedTools currentSlug="qr-code-generator" />
       </ToolLayout>
 

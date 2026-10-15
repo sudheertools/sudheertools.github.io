@@ -41,6 +41,7 @@ export default function JSONValidatorPage() {
   return (
     <>
       <ToolLayout
+        slug="json-validator"
         title="JSON Validator"
         description="Validate JSON syntax and structure with detailed error messages. Instantly check if your JSON data is properly formatted and identify syntax issues."
         breadcrumbs={[

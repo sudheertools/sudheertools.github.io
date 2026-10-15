@@ -51,6 +51,7 @@ export default function HTMLDecodePage() {
   return (
     <>
       <ToolLayout
+        slug="html-decode"
         title="HTML Decoder"
         description="Decode HTML entities and character references back to their original readable text. Supports named entities (&amp;lt;), numeric references (&#60;), and escaped characters."
         breadcrumbs={[

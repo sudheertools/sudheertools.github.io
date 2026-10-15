@@ -6,7 +6,6 @@ import TextArea from "@/components/ui/TextArea";
 import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
 import RelatedTools from "@/components/tools/RelatedTools";
-import ToolInfo from "@/components/tools/ToolInfo";
 import { htmlToMarkdown } from "@/lib/tools/markdown";
 import { copyToClipboard } from "@/lib/utils";
 
@@ -63,62 +62,11 @@ export default function HTMLToMarkdownPage() {
     URL.revokeObjectURL(url);
   }
 
-  const infoSections = [
-    {
-      title: "What is HTML to Markdown?",
-      content:
-        "HTML to Markdown conversion transforms HTML (HyperText Markup Language) into Markdown, a lightweight markup language. Markdown is widely used for documentation, README files, and content management systems.",
-    },
-    {
-      title: "How to use this tool",
-      content:
-        "Paste your HTML code into the input field. Click Convert to transform it into clean Markdown. The output can be copied or downloaded as a .md file.",
-    },
-    {
-      title: "Supported HTML Elements",
-      content: (
-        <ul className="list-disc space-y-1 pl-5">
-          <li>Headings (H1-H6)</li>
-          <li>Bold, italic, underline, strikethrough</li>
-          <li>Links and images</li>
-          <li>Lists (ordered and unordered)</li>
-          <li>Blockquotes</li>
-          <li>Code blocks and inline code</li>
-          <li>Tables</li>
-          <li>Horizontal rules</li>
-        </ul>
-      ),
-    },
-    {
-      title: "Frequently Asked Questions",
-      content: (
-        <div className="space-y-3">
-          <div>
-            <p className="font-medium text-gray-900 dark:text-gray-100">
-              Does it handle complex HTML?
-            </p>
-            <p>
-              Yes. The tool handles nested elements, tables, and most common
-              HTML structures. Script and style tags are automatically removed.
-            </p>
-          </div>
-          <div>
-            <p className="font-medium text-gray-900 dark:text-gray-100">
-              What about HTML entities?
-            </p>
-            <p>
-              Common HTML entities like &amp;amp;, &amp;lt;, &amp;gt; are automatically
-              converted to their character equivalents.
-            </p>
-          </div>
-        </div>
-      ),
-    },
-  ];
 
   return (
     <>
       <ToolLayout
+        slug="html-to-markdown"
         title="HTML to Markdown Converter"
         description="Convert HTML to clean Markdown format instantly. Supports headings, links, images, lists, tables, and code blocks. All processing happens locally in your browser."
         breadcrumbs={[
@@ -159,8 +107,6 @@ export default function HTMLToMarkdownPage() {
             </div>
           </div>
         </div>
-
-        <ToolInfo sections={infoSections} />
         <RelatedTools currentSlug="html-to-markdown" />
       </ToolLayout>
 

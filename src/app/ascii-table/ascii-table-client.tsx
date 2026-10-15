@@ -31,6 +31,7 @@ export default function AsciiTablePage() {
   return (
     <>
       <ToolLayout
+        slug="ascii-table"
         title="ASCII Table"
         description="Complete ASCII character reference table with decimal codes, names, and categories. Search and copy characters instantly."
         breadcrumbs={[

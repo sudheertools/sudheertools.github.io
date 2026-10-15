@@ -79,6 +79,7 @@ export default function JSONFormatterPage() {
   return (
     <>
       <ToolLayout
+        slug="json-formatter"
         title="JSON Formatter"
         description="Format, validate, minify, and beautify JSON data with syntax highlighting. Supports customizable indentation and real-time validation with error reporting."
         breadcrumbs={[

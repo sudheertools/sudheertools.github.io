@@ -6,7 +6,6 @@ import TextArea from "@/components/ui/TextArea";
 import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
 import RelatedTools from "@/components/tools/RelatedTools";
-import ToolInfo from "@/components/tools/ToolInfo";
 import { copyToClipboard } from "@/lib/utils";
 
 function capitalize(s: string) {
@@ -97,14 +96,11 @@ export default function JSONToGoPage() {
     catch { setToast({ message: "Failed to copy", type: "error" }); }
   }
 
-  const infoSections = [
-    { title: "What is JSON to Go?", content: "Converts JSON data into Go struct definitions with json tags and proper Go types (int64, float64, string, bool, etc.)." },
-    { title: "Features", content: (<ul className="list-disc space-y-1 pl-5"><li>Nested struct generation</li><li>Proper Go type mapping</li><li>JSON struct tags</li><li>Array support</li></ul>) },
-  ];
 
   return (
     <>
       <ToolLayout
+        slug="json-to-go"
         title="JSON to Go"
         description="Convert JSON data to Go struct definitions with proper json tags and type mappings."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Tools", href: "/" }, { label: "JSON to Go" }]}
@@ -129,7 +125,6 @@ export default function JSONToGoPage() {
             )}
           </div>
         </div>
-        <ToolInfo sections={infoSections} />
         <RelatedTools currentSlug="json-to-go" />
       </ToolLayout>
       {toast && <Toast message={toast.message} type={toast.type} onClose={() => setToast(null)} />}

@@ -31,6 +31,7 @@ export default function HtmlEntitiesPage() {
   return (
     <>
       <ToolLayout
+        slug="html-entities"
         title="HTML Entities"
         description="Complete reference of HTML entities with their codes, characters, and descriptions. Click any entity to copy its code."
         breadcrumbs={[

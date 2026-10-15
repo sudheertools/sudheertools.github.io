@@ -6,7 +6,6 @@ import TextArea from "@/components/ui/TextArea";
 import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
 import RelatedTools from "@/components/tools/RelatedTools";
-import ToolInfo from "@/components/tools/ToolInfo";
 import { formatHTML, minifyHTML, validateHTML } from "@/lib/tools/html-format";
 import { copyToClipboard } from "@/lib/utils";
 
@@ -75,27 +74,11 @@ export default function HTMLFormatterPage() {
     }
   }
 
-  const infoSections = [
-    {
-      title: "What is HTML Formatter?",
-      content:
-        "HTML Formatter is a free online tool that formats and beautifies HTML code. It adds proper indentation to make HTML documents readable and easy to maintain.",
-    },
-    {
-      title: "How to Use?",
-      content:
-        "Paste your HTML code in the input area and click 'Format' to beautify it, 'Minify' to compress it, or 'Validate' to check for errors.",
-    },
-    {
-      title: "Features",
-      content:
-        "• Format HTML with customizable indentation\n• Minify HTML by removing whitespace\n• Validate HTML structure\n• Handle self-closing and void elements",
-    },
-  ];
 
   return (
     <>
       <ToolLayout
+        slug="html-formatter"
         title="HTML Formatter"
         description="Format, beautify, and minify HTML code with proper indentation. Supports validation and customizable indent levels."
         breadcrumbs={[
@@ -176,8 +159,6 @@ export default function HTMLFormatterPage() {
             </div>
           )}
         </div>
-
-        <ToolInfo sections={infoSections} />
         <RelatedTools currentSlug="html-formatter" />
       </ToolLayout>
 

@@ -6,7 +6,6 @@ import TextArea from "@/components/ui/TextArea";
 import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
 import RelatedTools from "@/components/tools/RelatedTools";
-import ToolInfo from "@/components/tools/ToolInfo";
 import { formatXML, minifyXML, validateXML } from "@/lib/tools/xml";
 import { copyToClipboard } from "@/lib/utils";
 
@@ -76,27 +75,11 @@ export default function XMLFormatterPage() {
     }
   }
 
-  const infoSections = [
-    {
-      title: "What is XML Formatter?",
-      content:
-        "XML Formatter is a free online tool that formats, validates, and pretty-prints XML documents. It adds proper indentation to make XML files readable and easy to understand.",
-    },
-    {
-      title: "How to Use XML Formatter?",
-      content:
-        "Paste your XML code in the input area and click 'Format' to pretty-print it, 'Minify' to compress it, or 'Validate' to check for errors. You can customize the indentation level.",
-    },
-    {
-      title: "Features",
-      content:
-        "• Format XML with customizable indentation\n• Minify XML by removing whitespace\n• Validate XML structure and report errors\n• Count tags and check nesting depth",
-    },
-  ];
 
   return (
     <>
       <ToolLayout
+        slug="xml-formatter"
         title="XML Formatter"
         description="Format, validate, minify, and pretty-print XML documents with customizable indentation. Supports XML validation and error reporting."
         breadcrumbs={[
@@ -178,8 +161,6 @@ export default function XMLFormatterPage() {
             </div>
           )}
         </div>
-
-        <ToolInfo sections={infoSections} />
         <RelatedTools currentSlug="xml-formatter" />
       </ToolLayout>
 

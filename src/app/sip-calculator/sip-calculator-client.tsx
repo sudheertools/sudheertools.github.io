@@ -5,7 +5,6 @@ import ToolLayout from "@/components/layout/ToolLayout";
 import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
 import RelatedTools from "@/components/tools/RelatedTools";
-import ToolInfo from "@/components/tools/ToolInfo";
 import { copyToClipboard } from "@/lib/utils";
 
 interface SIPResult {
@@ -66,14 +65,11 @@ export default function SIPCalculatorPage() {
     catch { setToast({ message: "Failed to copy", type: "error" }); }
   }
 
-  const infoSections = [
-    { title: "What is SIP?", content: "Systematic Investment Plan (SIP) allows you to invest a fixed amount regularly in mutual funds. It uses rupee cost averaging and the power of compounding to build wealth over time." },
-    { title: "SIP Formula", content: "FV = P × [(1 + r)^n - 1] / r × (1 + r), where P = monthly investment, r = monthly rate of return, n = total months." },
-  ];
 
   return (
     <>
       <ToolLayout
+        slug="sip-calculator"
         title="SIP Calculator"
         description="Calculate Systematic Investment Plan (SIP) returns. Estimate your wealth with projected returns over time."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Tools", href: "/" }, { label: "SIP Calculator" }]}
@@ -145,7 +141,6 @@ export default function SIPCalculatorPage() {
             )}
           </div>
         </div>
-        <ToolInfo sections={infoSections} />
         <RelatedTools currentSlug="sip-calculator" />
       </ToolLayout>
       {toast && <Toast message={toast.message} type={toast.type} onClose={() => setToast(null)} />}

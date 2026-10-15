@@ -64,6 +64,7 @@ export default function NumberBaseConverterPage() {
   return (
     <>
       <ToolLayout
+        slug="number-base-converter"
         title="Number Base Converter"
         description="Convert numbers between Binary (base 2), Octal (base 8), Decimal (base 10), and Hexadecimal (base 16) number systems with instant results."
         breadcrumbs={[

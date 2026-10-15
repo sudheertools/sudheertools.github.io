@@ -40,6 +40,7 @@ export default function BoxShadowGeneratorPage() {
   return (
     <>
       <ToolLayout
+        slug="box-shadow-generator"
         title="Box Shadow Generator"
         description="Generate CSS box shadows with live preview. Customize offset, blur, spread, color, and inset options with instant visual feedback."
         breadcrumbs={[

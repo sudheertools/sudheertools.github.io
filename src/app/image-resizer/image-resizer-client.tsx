@@ -89,6 +89,7 @@ export default function ImageResizerPage() {
   return (
     <>
       <ToolLayout
+        slug="image-resizer"
         title="Image Resizer"
         description="Resize images by custom dimensions with optional aspect ratio lock. Supports JPG, PNG, and WebP formats."
         breadcrumbs={[

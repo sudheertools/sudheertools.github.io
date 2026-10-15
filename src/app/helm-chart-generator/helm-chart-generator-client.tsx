@@ -5,7 +5,6 @@ import ToolLayout from "@/components/layout/ToolLayout";
 import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
 import RelatedTools from "@/components/tools/RelatedTools";
-import ToolInfo from "@/components/tools/ToolInfo";
 import { copyToClipboard } from "@/lib/utils";
 
 type ChartType = "deployment" | "service" | "configmap" | "ingress";
@@ -136,14 +135,11 @@ export default function HelmChartGeneratorPage() {
     catch { setToast({ message: "Failed to copy", type: "error" }); }
   }
 
-  const infoSections = [
-    { title: "What is a Helm Chart Generator?", content: "Generates Kubernetes Helm chart templates (Deployment, Service, ConfigMap, Ingress) with Go template syntax and configurable values." },
-    { title: "How to use", content: "Select a resource type, click Generate, and copy the template into your Helm chart's templates/ directory. Use the values.yaml as a starting point." },
-  ];
 
   return (
     <>
       <ToolLayout
+        slug="helm-chart-generator"
         title="Helm Chart Generator"
         description="Generate Kubernetes Helm chart templates for Deployments, Services, ConfigMaps, and Ingress resources."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Tools", href: "/" }, { label: "Helm Chart Generator" }]}
@@ -181,7 +177,6 @@ export default function HelmChartGeneratorPage() {
             )}
           </div>
         </div>
-        <ToolInfo sections={infoSections} />
         <RelatedTools currentSlug="helm-chart-generator" />
       </ToolLayout>
       {toast && <Toast message={toast.message} type={toast.type} onClose={() => setToast(null)} />}

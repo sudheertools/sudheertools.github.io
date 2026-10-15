@@ -5,7 +5,6 @@ import ToolLayout from "@/components/layout/ToolLayout";
 import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
 import RelatedTools from "@/components/tools/RelatedTools";
-import ToolInfo from "@/components/tools/ToolInfo";
 import { copyToClipboard } from "@/lib/utils";
 
 function ipToInt(ip: string): number {
@@ -120,21 +119,11 @@ export default function SubnetCalculatorPage() {
     catch { setToast({ message: "Failed to copy", type: "error" }); }
   }
 
-  const infoSections = [
-    { title: "What is a Subnet Calculator?", content: "Calculates network address, broadcast address, usable host range, and other subnet details from an IP address and CIDR prefix." },
-    { title: "Common CIDR Ranges", content: (
-      <ul className="list-disc space-y-1 pl-5">
-        <li>/32 - Single host (255.255.255.255)</li>
-        <li>/24 - Class C (255.255.255.0) - 254 hosts</li>
-        <li>/16 - Class B (255.255.0.0) - 65,534 hosts</li>
-        <li>/8 - Class A (255.0.0.0) - 16M+ hosts</li>
-      </ul>
-    )},
-  ];
 
   return (
     <>
       <ToolLayout
+        slug="subnet-calculator"
         title="Subnet Calculator"
         description="Calculate subnet ranges, CIDR notation, network addresses, and IP address information."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Tools", href: "/" }, { label: "Subnet Calculator" }]}
@@ -192,7 +181,6 @@ export default function SubnetCalculatorPage() {
             )}
           </div>
         </div>
-        <ToolInfo sections={infoSections} />
         <RelatedTools currentSlug="subnet-calculator" />
       </ToolLayout>
       {toast && <Toast message={toast.message} type={toast.type} onClose={() => setToast(null)} />}

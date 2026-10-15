@@ -6,7 +6,6 @@ import TextArea from "@/components/ui/TextArea";
 import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
 import RelatedTools from "@/components/tools/RelatedTools";
-import ToolInfo from "@/components/tools/ToolInfo";
 import { formatSQL, minifySQL, validateSQL, type SQLDialect } from "@/lib/tools/sql";
 import { copyToClipboard } from "@/lib/utils";
 
@@ -74,27 +73,11 @@ export default function SQLFormatterPage() {
     }
   }
 
-  const infoSections = [
-    {
-      title: "What is SQL Formatter?",
-      content:
-        "SQL Formatter is a free online tool that formats and beautifies SQL queries. It makes your SQL code more readable by properly indenting and organizing keywords, clauses, and conditions.",
-    },
-    {
-      title: "How to Use SQL Formatter?",
-      content:
-        "Paste your SQL query in the input area, select your preferred dialect (Standard, MySQL, PostgreSQL, or SQLite), and click 'Format' to beautify it or 'Minify' to compress it.",
-    },
-    {
-      title: "Supported Dialects",
-      content:
-        "• Standard SQL - Generic SQL formatting\n• MySQL - Includes MySQL-specific keywords\n• PostgreSQL - Supports PostgreSQL-specific syntax\n• SQLite - SQLite-compatible formatting",
-    },
-  ];
 
   return (
     <>
       <ToolLayout
+        slug="sql-formatter"
         title="SQL Formatter"
         description="Format, beautify, and validate SQL queries with support for multiple database dialects. Make your SQL code more readable and maintainable."
         breadcrumbs={[
@@ -173,8 +156,6 @@ export default function SQLFormatterPage() {
             </div>
           )}
         </div>
-
-        <ToolInfo sections={infoSections} />
         <RelatedTools currentSlug="sql-formatter" />
       </ToolLayout>
 

@@ -51,6 +51,7 @@ export default function HTMLEncodePage() {
   return (
     <>
       <ToolLayout
+        slug="html-encode"
         title="HTML Encoder"
         description="Encode special characters to their corresponding HTML entities for safe use in HTML documents. Converts characters like <, >, &, and quotes to their entity equivalents."
         breadcrumbs={[

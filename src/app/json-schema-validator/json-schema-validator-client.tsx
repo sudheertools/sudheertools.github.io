@@ -57,6 +57,7 @@ export default function JsonSchemaValidatorPage() {
   return (
     <>
       <ToolLayout
+        slug="json-schema-validator"
         title="JSON Schema Validator"
         description="Validate JSON data against a JSON Schema definition. Check data types, required fields, constraints, and nested structures."
         breadcrumbs={[

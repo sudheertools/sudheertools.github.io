@@ -56,6 +56,7 @@ export default function TextReverserPage() {
   return (
     <>
       <ToolLayout
+        slug="text-reverser"
         title="Text Reverser"
         description="Reverse text character by character, word by word, or line by line. Instant preview with copy to clipboard support."
         breadcrumbs={[

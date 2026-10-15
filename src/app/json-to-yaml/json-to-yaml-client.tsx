@@ -6,7 +6,6 @@ import TextArea from "@/components/ui/TextArea";
 import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
 import RelatedTools from "@/components/tools/RelatedTools";
-import ToolInfo from "@/components/tools/ToolInfo";
 import { jsonToYAMLStr, yamlToJSONStr } from "@/lib/tools/yaml";
 import { copyToClipboard } from "@/lib/utils";
 
@@ -56,27 +55,11 @@ export default function JSONToYAMLPage() {
     setError("");
   }
 
-  const infoSections = [
-    {
-      title: "What is JSON to YAML Converter?",
-      content:
-        "JSON to YAML Converter is a free online tool that converts data between JSON and YAML formats. It supports bidirectional conversion, allowing you to easily switch between these popular data serialization formats.",
-    },
-    {
-      title: "How to Use?",
-      content:
-        "Paste your JSON or YAML in the input area, select the conversion direction, and click 'Convert'. You can swap input/output with the 'Swap' button to convert in the opposite direction.",
-    },
-    {
-      title: "Features",
-      content:
-        "• Convert JSON to YAML format\n• Convert YAML to JSON format\n• Preserve data structure and types\n• Handle nested objects and arrays\n• Clean, readable output",
-    },
-  ];
 
   return (
     <>
       <ToolLayout
+        slug="json-to-yaml"
         title="JSON to YAML Converter"
         description="Convert data between JSON and YAML formats with a single click. Bidirectional conversion supports both JSON to YAML and YAML to JSON."
         breadcrumbs={[
@@ -125,8 +108,6 @@ export default function JSONToYAMLPage() {
             </div>
           </div>
         </div>
-
-        <ToolInfo sections={infoSections} />
         <RelatedTools currentSlug="json-to-yaml" />
       </ToolLayout>
 

@@ -40,6 +40,7 @@ export default function HTTPStatusCodesPage() {
   return (
     <>
       <ToolLayout
+        slug="http-status-codes"
         title="HTTP Status Codes"
         description="Complete reference of HTTP status codes with descriptions. Search and filter to quickly find the code you need."
         breadcrumbs={[

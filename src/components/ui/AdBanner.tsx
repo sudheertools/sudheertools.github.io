@@ -2,8 +2,16 @@
 
 import { useEffect, useRef } from "react";
 
+// Ad unit slot IDs from AdSense (Ads > By ad unit).
+// Add new slots here as they are created in the AdSense dashboard.
+export const AD_SLOTS = {
+  /** ToolPage-InContent-Horizontal — used on tool pages and homepage */
+  inContent: "5649977497",
+} as const;
+
 interface AdBannerProps {
   className?: string;
+  slot?: string;
   format?: "horizontal" | "vertical" | "square";
   responsive?: boolean;
 }
@@ -16,6 +24,7 @@ declare global {
 
 export default function AdBanner({
   className = "",
+  slot = AD_SLOTS.inContent,
   format = "horizontal",
   responsive = true,
 }: AdBannerProps) {
@@ -53,7 +62,7 @@ export default function AdBanner({
           ...style,
         }}
         data-ad-client="ca-pub-0050898365765606"
-        data-ad-slot="auto"
+        data-ad-slot={slot}
         data-ad-format={responsive ? "auto" : undefined}
         data-full-width-responsive={responsive ? "true" : undefined}
       />

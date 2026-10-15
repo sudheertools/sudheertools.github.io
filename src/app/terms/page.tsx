@@ -17,12 +17,7 @@ export default function TermsPage() {
         Terms of Service
       </h1>
       <p className="mt-4 text-sm text-gray-500 dark:text-gray-400">
-        Last updated:{" "}
-        {new Date().toLocaleDateString("en-US", {
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-        })}
+        Last updated: October 15, 2026
       </p>
 
       <div className="prose prose-gray mt-8 max-w-none dark:prose-invert">
@@ -169,8 +164,7 @@ export default function TermsPage() {
         </h2>
         <p className="text-gray-600 dark:text-gray-400">
           These Terms shall be governed by and construed in accordance with the
-          laws of the jurisdiction in which the Service operator resides,
-          without regard to its conflict of law provisions.
+          laws of India, without regard to its conflict of law provisions.
         </p>
 
         <h2 className="mt-8 text-2xl font-bold text-gray-900 dark:text-white">

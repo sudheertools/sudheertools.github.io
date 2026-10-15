@@ -77,6 +77,7 @@ export default function PngToJpgPage() {
   return (
     <>
       <ToolLayout
+        slug="png-to-jpg"
         title="PNG to JPG Converter"
         description="Convert PNG images to JPG format with adjustable quality settings. Instant conversion with download support."
         breadcrumbs={[

@@ -5,7 +5,6 @@ import ToolLayout from "@/components/layout/ToolLayout";
 import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
 import RelatedTools from "@/components/tools/RelatedTools";
-import ToolInfo from "@/components/tools/ToolInfo";
 import { copyToClipboard } from "@/lib/utils";
 
 interface EMIResult {
@@ -81,14 +80,11 @@ export default function EMICalculatorPage() {
     catch { setToast({ message: "Failed to copy", type: "error" }); }
   }
 
-  const infoSections = [
-    { title: "What is EMI?", content: "Equated Monthly Installment (EMI) is a fixed payment amount made by a borrower to a lender each month. It includes both principal and interest components." },
-    { title: "EMI Formula", content: "EMI = P × r × (1 + r)^n / [(1 + r)^n - 1], where P = principal, r = monthly interest rate, n = total months." },
-  ];
 
   return (
     <>
       <ToolLayout
+        slug="emi-calculator"
         title="EMI Calculator"
         description="Calculate Equated Monthly Installments (EMI) for home loans, car loans, or personal loans."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Tools", href: "/" }, { label: "EMI Calculator" }]}
@@ -176,7 +172,6 @@ export default function EMICalculatorPage() {
             )}
           </div>
         </div>
-        <ToolInfo sections={infoSections} />
         <RelatedTools currentSlug="emi-calculator" />
       </ToolLayout>
       {toast && <Toast message={toast.message} type={toast.type} onClose={() => setToast(null)} />}

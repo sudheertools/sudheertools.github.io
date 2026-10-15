@@ -58,6 +58,7 @@ export default function CSSGradientGeneratorPage() {
   return (
     <>
       <ToolLayout
+        slug="css-gradient-generator"
         title="CSS Gradient Generator"
         description="Create beautiful CSS gradients with multiple color stops. Live preview with copy-to-clipboard CSS output."
         breadcrumbs={[

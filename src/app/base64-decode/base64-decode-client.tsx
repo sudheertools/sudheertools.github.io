@@ -5,9 +5,7 @@ import ToolLayout from "@/components/layout/ToolLayout";
 import TextArea from "@/components/ui/TextArea";
 import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
-import RelatedTools from "@/components/tools/RelatedTools";
-import ToolInfo from "@/components/tools/ToolInfo";
-
+import RelatedTools from "@/components/tools/RelatedTools";
 import { decodeBase64 } from "@/lib/tools/base64";
 import { copyToClipboard } from "@/lib/utils";
 import Link from "next/link";
@@ -54,74 +52,11 @@ export default function Base64DecodePage() {
     }
   }
 
-  const infoSections = [
-    {
-      title: "What is Base64?",
-      content:
-        "Base64 is a binary-to-text encoding scheme that represents binary data using a set of 64 ASCII characters (A-Z, a-z, 0-9, +, and /). It is widely used in data transmission and storage where text-only formats are required, such as embedding images in web pages, transmitting email attachments, and storing configuration data.",
-    },
-    {
-      title: "How to use this tool",
-      content:
-        "Paste your Base64 encoded text into the input field and click the Decode button. The decoded plain text will appear in the output area instantly. The tool includes validation to detect invalid Base64 input and will display an error message if the format is incorrect.",
-    },
-    {
-      title: "Example",
-      content: (
-        <div className="space-y-2">
-          <p>
-            <strong>Input:</strong> SGVsbG8sIFdvcmxkIQ==
-          </p>
-          <p>
-            <strong>Output:</strong> Hello, World!
-          </p>
-          <p className="text-xs text-gray-400">
-            The tool correctly decodes Unicode characters including emojis and
-            non-Latin scripts.
-          </p>
-        </div>
-      ),
-    },
-    {
-      title: "Frequently Asked Questions",
-      content: (
-        <div className="space-y-3">
-          <div>
-            <p className="font-medium text-gray-900 dark:text-gray-100">
-              What if my input is invalid?
-            </p>
-            <p>
-              The tool validates the input format and displays a clear error
-              message if the Base64 is malformed, has incorrect padding, or
-              contains invalid characters.
-            </p>
-          </div>
-          <div>
-            <p className="font-medium text-gray-900 dark:text-gray-100">
-              Does it handle Unicode?
-            </p>
-            <p>
-              Yes. The decoder uses the TextDecoder API with UTF-8 encoding to
-              properly handle all Unicode characters.
-            </p>
-          </div>
-          <div>
-            <p className="font-medium text-gray-900 dark:text-gray-100">
-              Is my data safe?
-            </p>
-            <p>
-              Absolutely. All decoding happens locally in your browser. No data
-              is transmitted to any server.
-            </p>
-          </div>
-        </div>
-      ),
-    },
-  ];
 
   return (
     <>
       <ToolLayout
+        slug="base64-decode"
         title="Base64 Decoder"
         description="Decode Base64 encoded text back to readable format instantly. Our free online Base64 decoder supports Unicode characters including emojis. All processing happens locally in your browser - your data never leaves your device."
         breadcrumbs={[
@@ -182,9 +117,7 @@ export default function Base64DecodePage() {
             Try the Base64 Encoder →
           </Link>
         </div>
-
-        <ToolInfo sections={infoSections} />
-        <RelatedTools currentSlug="base64-decode" />
+        <RelatedTools currentSlug="base64-decode" />
       </ToolLayout>
 
       {toast && (

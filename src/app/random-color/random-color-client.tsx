@@ -39,6 +39,7 @@ export default function RandomColorPage() {
   return (
     <>
       <ToolLayout
+        slug="random-color"
         title="Random Color Generator"
         description="Generate random colors with HEX, RGB, and HSL values for web design and development. Click any color to create complementary color palettes."
         breadcrumbs={[

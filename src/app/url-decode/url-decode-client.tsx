@@ -51,6 +51,7 @@ export default function URLDecodePage() {
   return (
     <>
       <ToolLayout
+        slug="url-decode"
         title="URL Decoder"
         description="Decode URL-encoded (percent-encoded) strings back to their original readable format. Supports standard percent encoding used in web URLs and form submissions."
         breadcrumbs={[

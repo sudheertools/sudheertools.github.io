@@ -1,3 +1,5 @@
+import { getContentBySlug } from "./content";
+
 export interface Tool {
   name: string;
   slug: string;
@@ -7,8 +9,10 @@ export interface Tool {
   href: string;
   relatedSlugs: string[];
   whatIs?: string;
+  whyUse?: string[];
   howToUse?: string[];
   examples?: { title: string; input: string; output: string }[];
+  useCases?: string[];
   faqs?: { q: string; a: string }[];
 }
 
@@ -101,7 +105,7 @@ export const categories: ToolCategory[] = [
   },
 ];
 
-export const tools: Tool[] = [
+const baseTools: Tool[] = [
   // Encoding
   {
     name: "Base64 Encoder",
@@ -1076,6 +1080,13 @@ export const tools: Tool[] = [
     relatedSlugs: [],
   },
 ];
+
+// Merge long-form educational content (whatIs/whyUse/howToUse/examples/useCases/faqs)
+// from src/lib/tools/content/ into each tool entry.
+export const tools: Tool[] = baseTools.map((tool) => {
+  const content = getContentBySlug(tool.slug);
+  return content ? { ...tool, ...content } : tool;
+});
 
 export function getToolBySlug(slug: string): Tool | undefined {
   return tools.find((tool) => tool.slug === slug);

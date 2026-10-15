@@ -6,7 +6,6 @@ import TextArea from "@/components/ui/TextArea";
 import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
 import RelatedTools from "@/components/tools/RelatedTools";
-import ToolInfo from "@/components/tools/ToolInfo";
 import { copyToClipboard } from "@/lib/utils";
 
 function capitalize(s: string) {
@@ -96,14 +95,11 @@ export default function JSONToRustPage() {
     catch { setToast({ message: "Failed to copy", type: "error" }); }
   }
 
-  const infoSections = [
-    { title: "What is JSON to Rust?", content: "Converts JSON data into Rust struct definitions with serde derive macros and proper type mappings." },
-    { title: "Features", content: (<ul className="list-disc space-y-1 pl-5"><li>Serde derive macros</li><li>Proper Rust type mapping (i64, f64, String, bool)</li><li>Nested struct generation</li><li>Vec for arrays</li></ul>) },
-  ];
 
   return (
     <>
       <ToolLayout
+        slug="json-to-rust"
         title="JSON to Rust"
         description="Convert JSON data to Rust struct definitions with serde derives and proper type mappings."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Tools", href: "/" }, { label: "JSON to Rust" }]}
@@ -128,7 +124,6 @@ export default function JSONToRustPage() {
             )}
           </div>
         </div>
-        <ToolInfo sections={infoSections} />
         <RelatedTools currentSlug="json-to-rust" />
       </ToolLayout>
       {toast && <Toast message={toast.message} type={toast.type} onClose={() => setToast(null)} />}

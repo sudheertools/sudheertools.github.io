@@ -6,7 +6,6 @@ import TextArea from "@/components/ui/TextArea";
 import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
 import RelatedTools from "@/components/tools/RelatedTools";
-import ToolInfo from "@/components/tools/ToolInfo";
 import { csvToJSON } from "@/lib/tools/csv";
 import { copyToClipboard } from "@/lib/utils";
 
@@ -64,59 +63,11 @@ export default function CSVToJSONPage() {
     URL.revokeObjectURL(url);
   }
 
-  const infoSections = [
-    {
-      title: "What is CSV to JSON?",
-      content:
-        "CSV to JSON conversion transforms Comma-Separated Values data into JSON (JavaScript Object Notation) format. JSON is the standard data format for web APIs and modern applications.",
-    },
-    {
-      title: "How to use this tool",
-      content:
-        "Paste your CSV data into the input field. The first row should contain column headers. Choose your delimiter and click Convert. The JSON output can be copied or downloaded.",
-    },
-    {
-      title: "Example Input",
-      content: (
-        <pre className="overflow-x-auto rounded-lg bg-gray-50 p-3 font-mono text-sm dark:bg-gray-700">
-          <code className="text-gray-900 dark:text-gray-100">
-{`name,age,city
-John,30,New York
-Jane,25,London`}
-          </code>
-        </pre>
-      ),
-    },
-    {
-      title: "Frequently Asked Questions",
-      content: (
-        <div className="space-y-3">
-          <div>
-            <p className="font-medium text-gray-900 dark:text-gray-100">
-              What if my CSV has quoted fields?
-            </p>
-            <p>
-              The tool correctly handles quoted fields, including fields that
-              contain the delimiter character.
-            </p>
-          </div>
-          <div>
-            <p className="font-medium text-gray-900 dark:text-gray-100">
-              Does it handle empty values?
-            </p>
-            <p>
-              Yes. Empty fields are converted to empty strings in the JSON
-              output.
-            </p>
-          </div>
-        </div>
-      ),
-    },
-  ];
 
   return (
     <>
       <ToolLayout
+        slug="csv-to-json"
         title="CSV to JSON Converter"
         description="Convert CSV data to JSON format instantly. Supports custom delimiters and quoted fields. Download as JSON file. All processing happens locally in your browser."
         breadcrumbs={[
@@ -182,8 +133,6 @@ Jane,25,London`}
             </div>
           </div>
         </div>
-
-        <ToolInfo sections={infoSections} />
         <RelatedTools currentSlug="csv-to-json" />
       </ToolLayout>
 

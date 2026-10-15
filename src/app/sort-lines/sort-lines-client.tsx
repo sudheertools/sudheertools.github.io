@@ -44,6 +44,7 @@ export default function SortLinesPage() {
   return (
     <>
       <ToolLayout
+        slug="sort-lines"
         title="Sort Lines"
         description="Sort text lines alphabetically or numerically with ascending, descending, or reverse order options."
         breadcrumbs={[

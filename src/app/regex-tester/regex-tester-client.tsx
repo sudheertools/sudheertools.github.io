@@ -108,6 +108,7 @@ export default function RegexTesterPage() {
   return (
     <>
       <ToolLayout
+        slug="regex-tester"
         title="Regex Tester"
         description="Test regular expressions with live matching, match highlighting, and capture group extraction. Supports global, case-insensitive, multiline, and dotAll flags."
         breadcrumbs={[

@@ -6,7 +6,6 @@ import TextArea from "@/components/ui/TextArea";
 import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
 import RelatedTools from "@/components/tools/RelatedTools";
-import ToolInfo from "@/components/tools/ToolInfo";
 import { minifyJS, beautifyJS, validateJS } from "@/lib/tools/javascript";
 import { copyToClipboard } from "@/lib/utils";
 
@@ -75,27 +74,11 @@ export default function JSMinifierPage() {
     }
   }
 
-  const infoSections = [
-    {
-      title: "What is JavaScript Minifier?",
-      content:
-        "JavaScript Minifier is a free online tool that minifies and beautifies JavaScript code. It can compress JS by removing comments and whitespace, or format it for better readability.",
-    },
-    {
-      title: "How to Use?",
-      content:
-        "Paste your JavaScript code in the input area and click 'Minify' to compress it or 'Beautify' to format it. You can also validate the syntax.",
-    },
-    {
-      title: "Features",
-      content:
-        "• Minify JavaScript by removing comments and whitespace\n• Beautify JavaScript with proper indentation\n• Validate JavaScript syntax\n• Report line count",
-    },
-  ];
 
   return (
     <>
       <ToolLayout
+        slug="js-minifier"
         title="JavaScript Minifier"
         description="Minify JavaScript code to reduce file size or beautify it for better readability. Includes syntax validation and formatting options."
         breadcrumbs={[
@@ -159,8 +142,6 @@ export default function JSMinifierPage() {
             </div>
           )}
         </div>
-
-        <ToolInfo sections={infoSections} />
         <RelatedTools currentSlug="js-minifier" />
       </ToolLayout>
 

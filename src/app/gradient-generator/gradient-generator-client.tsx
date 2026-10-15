@@ -64,8 +64,9 @@ export default function GradientGeneratorPage() {
   return (
     <>
       <ToolLayout
-        title="CSS Gradient Generator"
-        description="Create beautiful CSS gradients with live preview. Supports linear and radial gradients with multiple color stops."
+        slug="gradient-generator"
+        title="Gradient Generator"
+        description="Build linear and radial CSS gradients with an adjustable angle and multiple color stops. Live preview updates as you edit, and the final CSS copies in one click."
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Tools", href: "/" },
