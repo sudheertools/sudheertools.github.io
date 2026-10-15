@@ -43,6 +43,8 @@ export default function AdBanner({
 
   const style: React.CSSProperties = {};
   if (format === "horizontal") {
+    style.width = "100%";
+    style.maxWidth = "100%";
     style.height = "100px";
   } else if (format === "vertical") {
     style.width = "300px";

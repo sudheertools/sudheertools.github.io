@@ -248,13 +248,13 @@ export default function ToolLayout({
                   {example.title}
                 </h3>
                 <div className="mt-3 grid gap-4 sm:grid-cols-2">
-                  <div>
+                  <div className="min-w-0">
                     <p className="text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">
                       Input
                     </p>
                     <pre className="rounded-lg bg-gray-100 p-3 text-sm overflow-x-auto dark:bg-gray-700"><code>{example.input}</code></pre>
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <p className="text-xs font-medium text-gray-500 dark:text-gray-400 mb-1">
                       Output
                     </p>
