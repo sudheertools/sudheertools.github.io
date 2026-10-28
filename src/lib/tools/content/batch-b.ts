@@ -598,64 +598,6 @@ export const batchBContent: Record<string, ToolContent> = {
     ],
   },
 
-  "character-counter": {
-    whatIs:
-      "A character count is the atomic unit of text length: every letter, digit, space, punctuation mark, and newline contributes one. Character tools usually report two headline numbers, total characters and characters excluding whitespace, because different systems count differently. Twitter/X allows 280 characters including spaces, a Google search snippet shows roughly 155-160 characters, an SMS segment holds 160 GSM-7 characters (or 70 when UCS-2 emoji force Unicode mode), and many HTML inputs enforce maxlength on raw code points. This tool tallies characters with and without spaces alongside words, sentences, paragraphs, and lines, updates as you type, and offers a one-click Copy Stats button for pasting the breakdown into a ticket or spec.",
-    whyUse: [
-      "Characters and characters-without-spaces update live as you type, which is what limit checking actually needs.",
-      "Copy Stats button puts the whole labeled breakdown of all six metrics on your clipboard in one action.",
-      "Line and paragraph counts expose formatting problems invisible in a word processor's count.",
-      "Built for compliance checks: tweet lengths, meta descriptions, form maxlength values, and SMS budgets.",
-      "Nothing is uploaded: counting is pure string-length math in your browser.",
-    ],
-    howToUse: [
-      "Type or paste text into the Input Text area; counts appear immediately as you edit.",
-      "Read the six stat cards: Characters, Characters (no spaces), Words, Sentences, Paragraphs, and Lines.",
-      "Compare Characters against the limit you are targeting (280 for X, 160 for SMS, about 60 for a title tag).",
-      "Click Copy Stats to copy the full labeled breakdown for a ticket or review.",
-      "Clear the text box to reset all counters.",
-    ],
-    examples: [
-      {
-        title: "Two-line note",
-        input: "Hello world.\nThis is a test.",
-        output:
-          "Characters: 28\nCharacters (no spaces): 23\nWords: 6\nSentences: 2\nParagraphs: 1\nLines: 2",
-      },
-      {
-        title: "Meta description length check",
-        input:
-          "Our free developer tools convert, validate, and format data instantly in your browser.",
-        output:
-          "Characters: 86\nCharacters (no spaces): 74\nWords: 13\nSentences: 1\nParagraphs: 1\nLines: 1",
-      },
-    ],
-    useCases: [
-      "Checking a post against X's 280-character limit before publishing.",
-      "Trimming meta descriptions and title tags to the pixel widths Google actually shows.",
-      "Verifying SMS or push-notification copy fits one segment to avoid double billing.",
-      "Confirming form field maxlength values against the content users actually need to enter.",
-    ],
-    faqs: [
-      {
-        q: "How is this different from the Word Counter?",
-        a: "This tool leads with character metrics (total, excluding spaces, and lines) plus the Copy Stats export, because character-limit compliance is its main job. Word Counter instead emphasizes word and sentence statistics and estimated reading time at 200 words per minute for writers and SEO work.",
-      },
-      {
-        q: "Do emojis and accented letters count as one character?",
-        a: "The count uses JavaScript string length, which measures UTF-16 code units. Most accented letters count as one, but many emoji count as two because they are built from surrogate pairs. Platforms like X apply their own weighting rules, so treat emoji-heavy drafts as approximate.",
-      },
-      {
-        q: "Are newlines counted?",
-        a: "Yes: each line break is one character in the total and is also what creates the Lines figure. Characters (no spaces) strips every whitespace type including newlines and tabs, giving you the compact length of the visible text.",
-      },
-      {
-        q: "Why does my word processor show a different count?",
-        a: "Word processors tokenize hyphenated words and numbers differently and sometimes exclude headers or footers. This tool defines words as whitespace-separated tokens and sentences as .!? boundaries, so results are reproducible and align with what most web platforms count.",
-      },
-    ],
-  },
-
   "regex-tester": {
     whatIs:
       "A regular expression is a compact pattern language for matching text, formalized here in ECMAScript, JavaScript's RegExp flavor. A pattern combines literals (cat), character classes ([0-9], \\d, \\w, \\s), quantifiers (*, +, ?, {n,m}), anchors (^ and $), capturing groups (...), and alternation (|). Flags modify meaning: g finds every match instead of just the first, i ignores case, m makes ^ and $ respect line boundaries, and s lets dots span newlines. Capture groups expose parenthesized subpatterns: in (\\d{4})-(\\d{2})-(\\d{2}), group 1 is the year. This tool runs JavaScript's native engine, so results match exactly what your browser and Node.js will produce.",
@@ -1277,27 +1219,27 @@ export const batchBContent: Record<string, ToolContent> = {
 
   "word-counter": {
     whatIs:
-      "Word count is the standard measure of content length for writing and publishing: a word is any run of text separated by whitespace, so don't and open-source each count as one. Beyond raw words, editors track sentences (delimited by ., !, and ?), paragraphs (blocks separated by blank lines), and estimated reading time, conventionally 200 words per minute for an average adult reading silently. That is why a 600-word post shows as 3 minutes. Publishers use these numbers to brief writers (800-1,200 words for a typical blog post), SEOs estimate content depth against top-ranking pages, and academics enforce thesis limits. This tool computes words, characters, sentences, paragraphs, and reading time live as you type.",
+      "Word count is the standard measure of content length for writing and publishing: a word is any run of text separated by whitespace, so don't and open-source each count as one. Beyond raw words, editors track sentences (delimited by ., !, and ?), paragraphs (blocks separated by blank lines), lines, characters with and without spaces, and estimated reading time, conventionally 200 words per minute for an average adult reading silently. That is why a 600-word post shows as 3 minutes. The character numbers are what hard limits are checked against: 280 characters for an X post, roughly 155-160 for a search snippet, 160 GSM-7 characters for an SMS segment, and maxlength values on HTML inputs. Publishers use word figures to brief writers (800-1,200 words for a typical blog post), SEOs estimate content depth against top-ranking pages, and academics enforce thesis limits. This tool computes all seven metrics live as you type and copies the whole labeled breakdown in one click.",
     whyUse: [
+      "Seven metrics on one screen: Words, Characters, Characters (no spaces), Sentences, Paragraphs, Lines, and Reading Time.",
       "Estimated reading time at 200 words per minute, the figure most editorial style guides assume.",
       "Live updates while you type or paste: there is no convert button to press.",
       "Sentence and paragraph counts reveal structural quality: run-on paragraphs or too-short sentences.",
-      "Words appear first in the layout because that is the metric writers check against a brief.",
-      "Counts are computed locally with no text leaving the browser.",
+      "Copy Stats exports the full labeled breakdown for a brief, ticket, or review, and everything is computed locally - no text leaves the browser.",
     ],
     howToUse: [
       "Paste or type your draft into the Input Text area.",
-      "Watch the six cards update instantly: Words, Characters, Characters (no spaces), Sentences, Paragraphs, and Reading Time.",
+      "Watch the seven cards update instantly: Words, Characters, Characters (no spaces), Sentences, Paragraphs, Lines, and Reading Time.",
       "Use Words against your target (for example 1,500 for a long-form post) and Reading Time to set reader expectations.",
-      "Check Sentences and Paragraphs to confirm the piece is broken into scannable chunks.",
-      "Keep editing: stats recompute on every keystroke.",
+      "For hard limits, compare Characters against 280 (X), about 60 (title tag), or 160 (SMS) - Characters (no spaces) gives the compact length.",
+      "Click Copy Stats to copy the full labeled breakdown, or Clear to reset, then keep editing: stats recompute on every keystroke.",
     ],
     examples: [
       {
         title: "Short passage stats",
-        input: "Hello world. This is a test.",
+        input: "Hello world.\nThis is a test.",
         output:
-          "Words: 6\nCharacters: 28\nCharacters (no spaces): 23\nSentences: 2\nParagraphs: 1\nReading Time: 1 min",
+          "Words: 6\nCharacters: 28\nCharacters (no spaces): 23\nSentences: 2\nParagraphs: 1\nLines: 2\nReading Time: 1 min",
       },
       {
         title: "Reading time scales with length",
@@ -1305,25 +1247,34 @@ export const batchBContent: Record<string, ToolContent> = {
         output:
           "Words: 450\nReading Time: 3 min (450 divided by 200 wpm is 2.25, rounded up to the next minute)",
       },
+      {
+        title: "Meta description length check",
+        input:
+          "Our free developer tools convert, validate, and format data instantly in your browser.",
+        output:
+          "Words: 13\nCharacters: 86\nCharacters (no spaces): 74\nSentences: 1\nParagraphs: 1\nLines: 1\nReading Time: 1 min",
+      },
     ],
     useCases: [
       "Hitting a freelance brief's word target, such as 'submit 1,200 plus or minus 100 words'.",
+      "Checking post and meta-description copy against X's 280-character limit or Google's snippet width.",
       "Estimating read time to display on a blog index or newsletter introduction.",
       "Checking that a landing-page section is scannable via sentence and paragraph counts.",
       "Comparing draft length against the average length of ranking articles for an SEO target.",
+      "Verifying SMS or push-notification copy fits one 160-character segment.",
     ],
     faqs: [
       {
-        q: "How is this different from the Character Counter?",
-        a: "This page is built around words and reading time, the metrics writers, editors, and SEOs size content with, and shows estimated minutes at 200 wpm. Character Counter leads with characters (with and without spaces) and line counts plus a Copy Stats export, for fitting hard character limits like tweets, meta descriptions, and form fields.",
+        q: "How are words and sentences counted?",
+        a: "Words are whitespace-separated tokens after trimming, so hyphenated compounds stay one word. Sentences split on runs of ., !, or ? and discard empty pieces; abbreviations like 'Dr.' can end a sentence early, so treat the count as an estimate rather than a grammar verdict.",
       },
       {
         q: "Why 200 words per minute?",
         a: "Silent reading studies put average adult prose reading around 200-250 wpm; 200 is the conservative figure most editorial and UX guidelines use, and results round up, so even a 10-word snippet shows '1 min' rather than a fraction. Dense technical material is read slower, so adjust mentally for your audience.",
       },
       {
-        q: "How are words and sentences counted?",
-        a: "Words are whitespace-separated tokens after trimming, so hyphenated compounds stay one word. Sentences split on runs of ., !, or ? and discard empty pieces; abbreviations like 'Dr.' can end a sentence early, so treat the count as an estimate rather than a grammar verdict.",
+        q: "Do emojis and accented letters count as one character?",
+        a: "The count uses JavaScript string length, which measures UTF-16 code units. Most accented letters count as one, but many emoji count as two because they are built from surrogate pairs. Platforms like X apply their own weighting rules, so treat emoji-heavy drafts as approximate.",
       },
       {
         q: "Why does my word processor disagree?",

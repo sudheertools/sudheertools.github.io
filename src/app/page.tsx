@@ -648,7 +648,7 @@ export default function HomePage() {
                     name: "Is this really free?",
                     acceptedAnswer: {
                       "@type": "Answer",
-                      text: "Yes, completely free. No sign-up, no limits, no premium tier. All 69 tools are available to everyone.",
+                      text: `Yes, completely free. No sign-up, no limits, no premium tier. All ${tools.length} tools are available to everyone.`,
                     },
                   },
                   {
@@ -691,7 +691,7 @@ export default function HomePage() {
             {[
               {
                 q: "Is this really free?",
-                a: "Yes, completely free. No sign-up, no limits, no premium tier. All 69 tools are available to everyone.",
+                a: `Yes, completely free. No sign-up, no limits, no premium tier. All ${tools.length} tools are available to everyone.`,
               },
               {
                 q: "Does it collect my data?",
@@ -841,13 +841,13 @@ export default function HomePage() {
             {[
               {
                 date: "Oct 2026",
-                title: "Content & quality overhaul",
-                desc: "Every one of the 69 tool pages now includes a full guide: what the tool is, why to use it, step-by-step instructions, worked examples, use cases, and FAQs.",
+                title: "Structural quality rework",
+                desc: "Merged near-duplicate tools, varied tool-page structure by category, added Common Mistakes, Security, and comparison modules, and grew guides from 6 to 14.",
               },
               {
                 date: "Oct 2026",
-                title: "Structured data fixes",
-                desc: "Per-tool SoftwareApplication and FAQ schema now emitted correctly; sitewide FAQ schema scoped to the homepage to match visible content.",
+                title: "Content & quality overhaul",
+                desc: `Every one of the ${tools.length} tool pages now includes a full guide: what the tool is, why to use it, step-by-step instructions, worked examples, use cases, and FAQs.`,
               },
               {
                 date: "Sep 2026",
@@ -857,7 +857,7 @@ export default function HomePage() {
               {
                 date: "Sep 2026",
                 title: "Guide pages launched",
-                desc: "6 in-depth guide pages covering JSON formatting, JWT decoding, Base64 encoding, UUID generation, regex testing, and hash functions.",
+                desc: "In-depth guide pages covering JSON formatting, JWT decoding, Base64 encoding, UUID generation, regex testing, and hash functions.",
               },
             ].map((item, i) => (
               <div
@@ -958,7 +958,7 @@ export default function HomePage() {
       </section>
 
       <div className="mt-16 text-center text-xs text-gray-400 dark:text-gray-500">
-        <p>Last updated: October 15, 2026</p>
+        <p>Last updated: {new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</p>
       </div>
     </div>
   );

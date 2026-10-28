@@ -55,6 +55,54 @@ const guides = [
     description: "MD5, SHA-1, SHA-256, SHA-512: security status, use cases, password hashing, HMAC.",
     icon: "HASH",
   },
+  {
+    slug: "url-encoding",
+    title: "URL Encoding Guide",
+    description: "Percent-encoding rules, encodeURI vs encodeURIComponent, double-encoding bugs, debugging broken query strings.",
+    icon: "URL",
+  },
+  {
+    slug: "html-entities",
+    title: "HTML Entities Guide",
+    description: "Named, decimal, and hex entity forms, when escaping prevents XSS, decoding raw entities.",
+    icon: "HTM",
+  },
+  {
+    slug: "unix-timestamps",
+    title: "Unix Timestamp Guide",
+    description: "Epoch seconds vs milliseconds, timezone pitfalls, ISO 8601 conversion, off-by-1000 bugs.",
+    icon: "TS",
+  },
+  {
+    slug: "password-security",
+    title: "Password Security Guide",
+    description: "Entropy, NIST guidance, CSPRNG generation, password managers, and server-side hashing.",
+    icon: "PWD",
+  },
+  {
+    slug: "cron-expressions",
+    title: "Cron Expression Guide",
+    description: "Five-field and six-field syntax, common schedules, timezone and daylight-saving gotchas.",
+    icon: "CRN",
+  },
+  {
+    slug: "json-to-code",
+    title: "JSON to Code Guide",
+    description: "Generate TypeScript, Go, Rust, and Dart types from real API payloads.",
+    icon: "TYP",
+  },
+  {
+    slug: "css-gradients",
+    title: "CSS Gradients Guide",
+    description: "Linear, radial, and conic gradients: angle math, colour stops, hard edges, performance.",
+    icon: "GRD",
+  },
+  {
+    slug: "subnetting",
+    title: "Subnetting Guide",
+    description: "CIDR prefixes, network and broadcast addresses, RFC 1918 ranges, VLSM basics.",
+    icon: "NET",
+  },
 ];
 
 export default function GuidesPage() {

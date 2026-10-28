@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { tools } from "@/lib/tools/registry";
 
 export const metadata: Metadata = {
   title: "Changelog — DevTools",
@@ -11,6 +12,17 @@ export const metadata: Metadata = {
 };
 
 const entries = [
+  {
+    date: "October 28, 2026",
+    title: "Structural quality rework",
+    items: [
+      "Merged near-duplicate tools: Character Counter is now part of Word Counter (words, characters, sentences, paragraphs, lines, reading time, copy-stats export), and Gradient Generator now redirects to CSS Gradient Generator. Old URLs redirect with noindex so link equity consolidates.",
+      "Tool pages now vary their section structure and headings by category, with new Common Mistakes, Security & Privacy, tool-comparison, and Related Guides modules on the most-used tools.",
+      "Eight new long-form guides: URL encoding, HTML entities, Unix timestamps, password security, cron expressions, JSON-to-code, CSS gradients, and subnetting (guides grew from 6 to 14).",
+      "All \"last updated\" dates and structured-data dateModified values now derive from build time instead of a hardcoded date.",
+      "Sitemap regenerated at build time and includes all 14 guides and 67 tools.",
+    ],
+  },
   {
     date: "October 15, 2026",
     title: "Content & quality overhaul",
@@ -95,7 +107,7 @@ export default function ChangelogPage() {
           href="/"
           className="text-blue-600 hover:underline dark:text-blue-400"
         >
-          Browse all 69 tools
+          Browse all {tools.length} tools
         </Link>{" "}
         or read the{" "}
         <Link

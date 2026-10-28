@@ -194,67 +194,6 @@ export const batchC1Content: Record<string, ToolContent> = {
     ],
   },
 
-  "gradient-generator": {
-    whatIs:
-      "A CSS gradient is a function that paints a colour transition across an element. linear-gradient takes an angle in degrees - 0deg points to the top, 90deg to the right - and lays colour stops along the line that angle defines, while radial-gradient spreads the same stops outward from a centre point as a circle. Each stop is a colour plus a position in percent, and the browser blends between neighbours. The angle is what separates a flat banner from one that feels lit from a corner: 135deg reads as light falling from the top-left, and 90deg sweeps horizontally across a hero section. This generator tunes that angle, flips between linear and radial, and writes the finished declaration for you.",
-    whyUse: [
-      "The Angle slider covers the full 0 to 360 degree range, and the preview updates as you drag.",
-      "Linear and Radial are one click apart, so you can sweep a hero backdrop or centre a glow without editing syntax.",
-      "Add Color Stop builds multi-point transitions, and the X button trims stops back down (two always remain).",
-      "Every stop has a colour picker, an editable hex field, and a position slider with a live percentage readout.",
-      "Copy CSS hands you the complete background declaration - the gradient you see is the text you get.",
-    ],
-    howToUse: [
-      "Watch the preview bar at the top of the card; it always renders the gradient you are building.",
-      "Click Linear or Radial to set the type (Linear is selected by default).",
-      "With Linear active, drag the Angle slider between 0 and 360 degrees; the label reads Angle: 135 as you move it.",
-      "For each colour stop, pick a swatch or type a hex value, then set its position on the percentage slider.",
-      "Press Add Color Stop to insert another point, or the red X on a row to delete it (X disappears when only two stops are left).",
-      "Click Copy CSS in the CSS Code panel to copy the full background: declaration to your clipboard.",
-    ],
-    examples: [
-      {
-        title: "Diagonal hero backdrop with a custom angle",
-        input: "Type: Linear, Angle: 135, stops: #0f0c29 0%, #302b63 50%, #24243e 100%",
-        output: "background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);",
-      },
-      {
-        title: "Horizontal sweep using the default two stops",
-        input: "Type: Linear, Angle: 90, stops: #667eea 0%, #764ba2 100%",
-        output: "background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);",
-      },
-      {
-        title: "Radial spotlight behind a section",
-        input: "Type: Radial, stops: #667eea 0%, #764ba2 100%",
-        output: "background: radial-gradient(circle, #667eea 0%, #764ba2 100%);",
-      },
-    ],
-    useCases: [
-      "Hero section backdrops where the gradient angle has to match the diagonal of the layout.",
-      "A radial glow behind a pricing card or call-to-action that pulls the eye to the centre.",
-      "Two-tone header bands that transition horizontally across the viewport.",
-      "Previewing brand colour pairs at several angles before committing one to a stylesheet.",
-    ],
-    faqs: [
-      {
-        q: "Which angle gives a top-left to bottom-right look?",
-        a: "Use 135deg. Zero degrees points straight up and 90deg points right, so 135deg aims down and to the right at the corner. Any value works, though - drag the slider until the preview matches your layout.",
-      },
-      {
-        q: "Why does Radial hide the angle slider?",
-        a: "A radial gradient spreads from a centre point instead of travelling along a direction, so there is no angle to set. The tool emits radial-gradient(circle, ...) with your stops; switch back to Linear to use the slider again.",
-      },
-      {
-        q: "Do I need -webkit- vendor prefixes?",
-        a: "Not in any browser from the last several years; linear-gradient and radial-gradient ship unprefixed in every current engine. Paste the copied declaration as-is.",
-      },
-      {
-        q: "How do I make a hard-edged band instead of a blend?",
-        a: "Give two adjacent stops the same position, for example white at 40% and dark at 40%. There is no distance left to interpolate across, so the colours meet at a crisp line.",
-      },
-    ],
-  },
-
   "box-shadow-generator": {
     whatIs:
       "A CSS box-shadow is one shorthand property built from up to five parts: offset X and offset Y move the shadow, blur radius softens its edge, spread grows or shrinks it relative to the box, and the colour decides how dark it reads - almost always with alpha so it looks like light rather than paint. A leading inset keyword flips the shadow inside the element, which is how recessed inputs and pressed buttons are faked. Negative spread pulls the shadow inward for tighter elevations, and negative offsets move it up or left. The important constraint is that a shadow is painted outside the layout flow: nothing reflows when you change one.",
@@ -606,8 +545,8 @@ export const batchC1Content: Record<string, ToolContent> = {
     ],
     faqs: [
       {
-        q: "How is this different from the Gradient Generator?",
-        a: "Both emit ready-to-paste background declarations. This tool opens on a three-stop composition and is built around assembling multi-colour ramps quickly, while Gradient Generator starts from two stops and focuses on tuning the angle and switching between linear and radial for hero backdrops.",
+        q: "Which angle gives a top-left to bottom-right look?",
+        a: "Use 135deg. Zero degrees points straight up and 90deg points right, so 135deg aims down and to the right at the corner. The Angle slider covers the full 0 to 360 range - drag it until the preview matches your layout.",
       },
       {
         q: "How do I get a hard edge instead of a smooth blend?",

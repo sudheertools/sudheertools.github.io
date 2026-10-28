@@ -4,14 +4,23 @@ import { tools } from "@/lib/tools/registry";
 export const dynamic = "force-static";
 
 const BASE_URL = "https://sudheertools.github.io";
-const LAST_MODIFIED = "2026-10-15";
+// Build-time date so sitemap freshness tracks each deployment.
+const LAST_MODIFIED = new Date().toISOString().split("T")[0];
 
 const guideSlugs = [
   "base64-encoding",
+  "cron-expressions",
+  "css-gradients",
   "hash-functions",
+  "html-entities",
   "json-formatting",
+  "json-to-code",
   "jwt-decoding",
+  "password-security",
   "regex-testing",
+  "subnetting",
+  "unix-timestamps",
+  "url-encoding",
   "uuid-generation",
 ];
 

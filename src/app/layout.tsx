@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ThemeProvider from "@/components/layout/ThemeProvider";
+import { tools } from "@/lib/tools/registry";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,18 +16,18 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const toolCount = tools.length;
+
 export const metadata: Metadata = {
   title: {
-    default: "69 Free Developer Tools — Private, Browser-Based | DevTools",
+    default: `${toolCount} Free Developer Tools — Private, Browser-Based | DevTools`,
     template: "%s | DevTools",
   },
-  description:
-    "69 free developer tools — JSON, Base64, UUID, regex, and more. 100% client-side, zero data uploads. No signup required.",
+  description: `${toolCount} free developer tools — JSON, Base64, UUID, regex, and more. 100% client-side, zero data uploads. No signup required.`,
   metadataBase: new URL("https://sudheertools.github.io"),
   openGraph: {
-    title: "69 Free Developer Tools — Private, Browser-Based | DevTools",
-    description:
-      "69 free developer tools — JSON, Base64, UUID, regex, and more. 100% client-side, zero data uploads. No signup required.",
+    title: `${toolCount} Free Developer Tools — Private, Browser-Based | DevTools`,
+    description: `${toolCount} free developer tools — JSON, Base64, UUID, regex, and more. 100% client-side, zero data uploads. No signup required.`,
     url: "https://sudheertools.github.io",
     siteName: "DevTools",
     images: [
@@ -34,16 +35,15 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "DevTools - 69 Free Private Browser-Based Developer Tools",
+        alt: `DevTools - ${toolCount} Free Private Browser-Based Developer Tools`,
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "69 Free Developer Tools — Private, Browser-Based | DevTools",
-    description:
-      "69 free developer tools — JSON, Base64, UUID, regex, and more. 100% client-side, zero data uploads. No signup required.",
+    title: `${toolCount} Free Developer Tools — Private, Browser-Based | DevTools`,
+    description: `${toolCount} free developer tools — JSON, Base64, UUID, regex, and more. 100% client-side, zero data uploads. No signup required.`,
     images: ["/og-image.png"],
   },
   robots: {
@@ -88,8 +88,7 @@ export default function RootLayout({
               name: "DevTools",
               url: "https://sudheertools.github.io",
               logo: "https://sudheertools.github.io/og-image.png",
-              description:
-                "69 free developer tools — JSON, Base64, UUID, regex, and more. 100% client-side, zero data uploads.",
+              description: `${toolCount} free developer tools — JSON, Base64, UUID, regex, and more. 100% client-side, zero data uploads.`,
               sameAs: [
                 "https://github.com/sudheertools",
                 "https://www.linkedin.com/in/sudheerkumargv/",
@@ -111,8 +110,7 @@ export default function RootLayout({
               "@type": "WebSite",
               name: "DevTools",
               url: "https://sudheertools.github.io",
-              description:
-                "69 free developer tools that run entirely in your browser. Private, fast, and free.",
+              description: `${toolCount} free developer tools that run entirely in your browser. Private, fast, and free.`,
             }),
           }}
         />

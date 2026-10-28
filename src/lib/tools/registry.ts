@@ -1,4 +1,5 @@
 import { getContentBySlug } from "./content";
+import { getExtrasBySlug } from "./content/extras";
 
 export interface Tool {
   name: string;
@@ -14,6 +15,15 @@ export interface Tool {
   examples?: { title: string; input: string; output: string }[];
   useCases?: string[];
   faqs?: { q: string; a: string }[];
+  commonMistakes?: string[];
+  security?: string;
+  comparison?: {
+    name: string;
+    href: string;
+    useWhen: string;
+    useThemWhen: string;
+  };
+  relatedGuides?: { href: string; title: string }[];
 }
 
 export interface ToolCategory {
@@ -553,7 +563,7 @@ const baseTools: Tool[] = [
     description: "Convert text between camelCase, snake_case, kebab-case, and more.",
     icon: "CASE",
     href: "/case-converter",
-    relatedSlugs: ["character-counter"],
+    relatedSlugs: ["word-counter"],
   },
   {
     name: "JSON to CSV",
@@ -638,15 +648,6 @@ const baseTools: Tool[] = [
     icon: "CRON",
     href: "/cron-generator",
     relatedSlugs: [],
-  },
-  {
-    name: "Character Counter",
-    slug: "character-counter",
-    category: "utility",
-    description: "Count characters, words, sentences, and lines in text.",
-    icon: "CNT",
-    href: "/character-counter",
-    relatedSlugs: ["case-converter"],
   },
   {
     name: "Regex Tester",
@@ -843,7 +844,7 @@ const baseTools: Tool[] = [
     description: "Count words, characters, sentences, and reading time.",
     icon: "WC",
     href: "/word-counter",
-    relatedSlugs: ["character-counter"],
+    relatedSlugs: ["case-converter", "remove-duplicates"],
   },
   {
     name: "Text Reverser",
@@ -883,22 +884,13 @@ const baseTools: Tool[] = [
     relatedSlugs: ["css-minifier"],
   },
   {
-    name: "Gradient Generator",
-    slug: "gradient-generator",
-    category: "css",
-    description: "Generate CSS gradients with live preview and multiple stops.",
-    icon: "GR",
-    href: "/gradient-generator",
-    relatedSlugs: ["box-shadow-generator", "css-gradient-generator"],
-  },
-  {
     name: "Box Shadow Generator",
     slug: "box-shadow-generator",
     category: "css",
     description: "Generate CSS box shadows with visual preview.",
     icon: "BS",
     href: "/box-shadow-generator",
-    relatedSlugs: ["gradient-generator"],
+    relatedSlugs: ["css-gradient-generator", "color-palette"],
   },
   // Image
   {
@@ -945,7 +937,7 @@ const baseTools: Tool[] = [
     description: "Create CSS gradients with multiple color stops.",
     icon: "CG",
     href: "/css-gradient-generator",
-    relatedSlugs: ["gradient-generator"],
+    relatedSlugs: ["box-shadow-generator", "color-palette"],
   },
   // Reference
   {
@@ -1082,10 +1074,12 @@ const baseTools: Tool[] = [
 ];
 
 // Merge long-form educational content (whatIs/whyUse/howToUse/examples/useCases/faqs)
+// and structural extras (commonMistakes/security/comparison/relatedGuides)
 // from src/lib/tools/content/ into each tool entry.
 export const tools: Tool[] = baseTools.map((tool) => {
   const content = getContentBySlug(tool.slug);
-  return content ? { ...tool, ...content } : tool;
+  const extras = getExtrasBySlug(tool.slug);
+  return { ...tool, ...content, ...extras };
 });
 
 export function getToolBySlug(slug: string): Tool | undefined {

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { tools } from "@/lib/tools/registry";
 
 export const metadata: Metadata = {
   title: "About DevTools — Why We Built Private Browser-Based Developer Tools",
@@ -25,7 +26,7 @@ export default function AboutPage() {
 
       <div className="prose prose-gray mt-8 max-w-none dark:prose-invert">
         <p className="text-lg text-gray-600 dark:text-gray-400">
-          DevTools is a collection of 69 free,
+          DevTools is a collection of {tools.length} free,
           browser-based developer tools built for one reason: your data should
           never leave your device.
         </p>

@@ -7,6 +7,7 @@ import Button from "@/components/ui/Button";
 import Toast from "@/components/ui/Toast";
 import RelatedTools from "@/components/tools/RelatedTools";
 import { countWords } from "@/lib/tools/word-counter";
+import { copyToClipboard } from "@/lib/utils";
 
 export default function WordCounterPage() {
   const [input, setInput] = useState("");
@@ -21,12 +22,34 @@ export default function WordCounterPage() {
     setStats(result);
   }, [input]);
 
+  function handleClear() {
+    setInput("");
+    setStats(null);
+  }
+
+  async function handleCopyStats() {
+    if (!stats) return;
+    const text = `Words: ${stats.words}
+Characters: ${stats.characters}
+Characters (no spaces): ${stats.charactersNoSpaces}
+Sentences: ${stats.sentences}
+Paragraphs: ${stats.paragraphs}
+Lines: ${stats.lines}
+Reading time: ${stats.readingTime}`;
+    try {
+      await copyToClipboard(text);
+      setToast({ message: "Stats copied to clipboard!", type: "success" });
+    } catch {
+      setToast({ message: "Failed to copy", type: "error" });
+    }
+  }
+
   return (
     <>
       <ToolLayout
         slug="word-counter"
-        title="Word Counter"
-        description="Count words, characters, sentences, and paragraphs in any text. Get estimated reading time and detailed text statistics."
+        title="Word & Character Counter"
+        description="Count words, characters (with and without spaces), sentences, paragraphs, and lines in any text. Includes estimated reading time and copyable statistics."
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Tools", href: "/" },
@@ -46,6 +69,20 @@ export default function WordCounterPage() {
 
           {stats && (
             <div className="mt-6">
+              <div className="mb-4 flex items-center justify-between">
+                <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                  Statistics
+                </h3>
+                <div className="flex gap-2">
+                  <Button variant="secondary" onClick={handleCopyStats}>
+                    Copy Stats
+                  </Button>
+                  <Button variant="ghost" onClick={handleClear}>
+                    Clear
+                  </Button>
+                </div>
+              </div>
+
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {[
                   { label: "Words", value: stats.words, icon: "W" },
@@ -53,6 +90,7 @@ export default function WordCounterPage() {
                   { label: "Characters (no spaces)", value: stats.charactersNoSpaces, icon: "Ab" },
                   { label: "Sentences", value: stats.sentences, icon: "S" },
                   { label: "Paragraphs", value: stats.paragraphs, icon: "P" },
+                  { label: "Lines", value: stats.lines, icon: "L" },
                   { label: "Reading Time", value: stats.readingTime, icon: "T" },
                 ].map((stat) => (
                   <div
@@ -80,7 +118,7 @@ export default function WordCounterPage() {
 
           {!stats && (
             <div className="mt-6 text-center text-gray-500 dark:text-gray-400">
-              Start typing to see word count and reading time.
+              Start typing to see word, character, line, and reading-time counts.
             </div>
           )}
         </div>
