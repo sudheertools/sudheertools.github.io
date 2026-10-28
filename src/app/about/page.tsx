@@ -45,6 +45,12 @@ export default function AboutPage() {
               </p>
               <div className="mt-2 flex gap-3">
                 <a
+                  href="mailto:sudheerkumar.gv@gmail.com"
+                  className="text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+                >
+                  Email
+                </a>
+                <a
                   href="https://github.com/sudheertools"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -166,7 +172,14 @@ export default function AboutPage() {
           Contact
         </h2>
         <p className="text-gray-600 dark:text-gray-400">
-          Have a question, suggestion, or bug report? Open an issue on{" "}
+          Have a question, suggestion, or bug report? Email{" "}
+          <a
+            href="mailto:sudheerkumar.gv@gmail.com"
+            className="text-blue-600 hover:text-blue-700 dark:text-blue-400"
+          >
+            sudheerkumar.gv@gmail.com
+          </a>{" "}
+          or open an issue on{" "}
           <a
             href="https://github.com/sudheertools/sudheertools.github.io/issues"
             target="_blank"

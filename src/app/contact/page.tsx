@@ -34,7 +34,14 @@ export default function ContactPage() {
           Best Way to Reach Us
         </h2>
         <p className="text-gray-600 dark:text-gray-400">
-          The fastest way to get a response is to open an issue on our{" "}
+          Email us directly at{" "}
+          <a
+            href="mailto:sudheerkumar.gv@gmail.com"
+            className="text-blue-600 hover:text-blue-700 dark:text-blue-400"
+          >
+            sudheerkumar.gv@gmail.com
+          </a>{" "}
+          or open an issue on our{" "}
           <a
             href="https://github.com/sudheertools/sudheertools.github.io/issues"
             target="_blank"
@@ -43,7 +50,7 @@ export default function ContactPage() {
           >
             GitHub Issues
           </a>
-          . We monitor issues regularly and typically respond within 1-2
+          . We monitor both regularly and typically respond within 1-2
           business days.
         </p>
 
@@ -176,7 +183,15 @@ export default function ContactPage() {
         </h2>
         <p className="text-gray-600 dark:text-gray-400">
           If you&apos;re a journalist, blogger, or interested in a partnership,
-          please reach out via{" "}
+          email{" "}
+          <a
+            href="mailto:sudheerkumar.gv@gmail.com?subject=Press%20%2F%20Partnership"
+            className="text-blue-600 hover:text-blue-700 dark:text-blue-400"
+          >
+            sudheerkumar.gv@gmail.com
+          </a>{" "}
+          with &quot;Press&quot; or &quot;Partnership&quot; in the subject
+          line, or open an issue on{" "}
           <a
             href="https://github.com/sudheertools/sudheertools.github.io/issues"
             target="_blank"
@@ -185,7 +200,7 @@ export default function ContactPage() {
           >
             GitHub Issues
           </a>
-          with "Press" or "Partnership" in the title.
+          .
         </p>
       </div>
 

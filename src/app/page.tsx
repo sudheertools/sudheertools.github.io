@@ -896,6 +896,12 @@ export default function HomePage() {
               </p>
               <div className="mt-2 flex gap-3">
                 <a
+                  href="mailto:sudheerkumar.gv@gmail.com"
+                  className="text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+                >
+                  Email
+                </a>
+                <a
                   href="https://github.com/sudheertools"
                   target="_blank"
                   rel="noopener noreferrer"
